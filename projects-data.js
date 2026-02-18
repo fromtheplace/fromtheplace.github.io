@@ -297,6 +297,15 @@ const projectData = {
       "html_h4": "Reach out!",
       "html_image": "images/ro.jpg",
       "description": "Reach out via <a href=\"mailto:blamboxcity@gmail.com\">blamboxcity@gmail.com</a>."
+    },
+    "16": {
+      "html_badge": "FULLSTACK DEV",
+      "html_image": "images/ftptv.png",
+      "html_h4": "FTPtv",
+      "html_description": "Web-hosted “TV/streaming” style music or video channel index, streaming local content, related to music and perfomance.",
+      "title": "FTPtv",
+      "customIframe": "<iframe style=\"border:1px #FFFFFF none\" src=\"https://fromtheplace.github.io/portal/channel.html\" title=\"iFrame\" width=\"100%\" height=\"512px\" scrolling=\"no\" frameborder=\"no\" allow=\"fullscreen\"></iframe>",
+      "description": "FTP TV is a web-hosted, TV-style index for music and performance video content. It functions as a lightweight streaming hub, presenting locally focused channels under a single broadcast-inspired interface. Each channel operates as a child node—such as NOOK TV—allowing distinct identities while remaining part of a unified “music television” ecosystem."
     }
   },
   "project_order": [
@@ -307,6 +316,6 @@ const projectData = {
     "3",
     "2",
     "12",
-    "15"
+    "16"
   ]
 };
