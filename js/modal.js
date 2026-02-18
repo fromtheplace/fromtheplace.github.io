@@ -230,18 +230,10 @@ function endDrag() {
   }
 }
 
-// Main media
-const videoContainer = document.getElementById('modalVideoContainer');
-videoContainer.innerHTML = '';
-
-/* 1️⃣ MAIN OVERRIDE — CUSTOM IFRAME */
-if (data.customIframe) {
-    videoContainer.innerHTML = data.customIframe;
-    videoContainer.classList.add('iframe-embed');
-    return; // ⛔ stop here — do NOT fall through to YouTube/Vimeo/Twitch
-}
-
-/* 2️⃣ YOUTUBE */
+  // Main YouTube video
+  const videoContainer = document.getElementById('modalVideoContainer');
+  videoContainer.innerHTML = '';
+  
 if (data.youtube) {
     const params = new URLSearchParams({
         autoplay: 1,
@@ -255,12 +247,9 @@ if (data.youtube) {
     const iframe = document.createElement('iframe');
     iframe.src = `https://www.youtube.com/embed/${data.youtube}?${params}`;
     iframe.frameBorder = '0';
-    iframe.allow =
-        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     iframe.allowFullscreen = true;
     videoContainer.appendChild(iframe);
-
-/* 3️⃣ VIMEO */
 } else if (data.vimeo) {
     const params = new URLSearchParams({
         autoplay: 1,
@@ -273,24 +262,19 @@ if (data.youtube) {
     iframe.allow = 'autoplay; fullscreen; picture-in-picture';
     iframe.allowFullscreen = true;
     videoContainer.appendChild(iframe);
-
-/* 4️⃣ TWITCH */
 } else if (data.twitch) {
     const iframe = document.createElement('iframe');
-
+    // Twitch can be either a video ID or channel name
     if (data.twitch.type === 'video') {
         iframe.src = `https://player.twitch.tv/?video=${data.twitch.id}&parent=${window.location.hostname}&autoplay=true`;
     } else if (data.twitch.type === 'channel') {
         iframe.src = `https://player.twitch.tv/?channel=${data.twitch.id}&parent=${window.location.hostname}&autoplay=true`;
     }
-
     iframe.frameBorder = '0';
-    iframe.allow =
-        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     iframe.allowFullscreen = true;
     videoContainer.appendChild(iframe);
 }
-
 
 // Chips
 const chipContainer = document.getElementById('yt-chip-container');
