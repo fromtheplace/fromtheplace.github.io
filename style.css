@@ -485,8 +485,7 @@ a.logo-mark .line-bottom {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  overflow-y: auto;
-  max-height: 90vh;
+  overflow: visible;
 }
 
 .modal-badge {
