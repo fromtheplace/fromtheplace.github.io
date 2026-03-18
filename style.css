@@ -832,7 +832,7 @@ a.logo-mark .line-bottom {
     overflow: hidden;
   }
   .chips {
-    align-self: start;
+    align-self: end;
     width: 100%;
     min-width: 0;
   }
