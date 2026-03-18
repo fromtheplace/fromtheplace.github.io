@@ -171,17 +171,17 @@ a { color: inherit; text-decoration: none; }
 .proj-cell:hover { background: #eeebe3; }
 .proj-cell:first-child { min-height: 260px; }
 
-/* Hover image reveal */
+/* Project background image — visible at rest, stronger on hover */
 .proj-cell .proj-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0;
+  opacity: 0.18;
   transition: opacity 0.35s;
   z-index: 0;
 }
-.proj-cell:hover .proj-bg { opacity: 0.12; }
+.proj-cell:hover .proj-bg { opacity: 0.32; }
 
 .proj-top, .proj-bottom { position: relative; z-index: 1; }
 
@@ -292,7 +292,7 @@ a { color: inherit; text-decoration: none; }
   padding: 2vh var(--pad);
   overflow-y: auto;
 }
-.modal[aria-hidden="false"] { display: flex; }
+/* display is controlled by modal.js via style.display = 'flex' */
 
 .modal-content {
   background: var(--surface);
