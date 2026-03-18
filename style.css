@@ -92,27 +92,28 @@ a.logo-mark {
   text-decoration: none;
   border: 1px solid var(--border-md);
   border-radius: 12px;          /* 39px scaled proportionally to header size */
-  padding: 0.35rem 0.65rem 0.45rem;
+  padding: 0.7rem 0.65rem 0.65rem;
   line-height: 0.85;
   text-align: center;
   transition: border-color 0.2s;
   flex-shrink: 0;
+      font-family: sans-serif;
 }
 a.logo-mark:hover { border-color: var(--text); }
 
 a.logo-mark .line-top {
-  font-family: var(--font-mono);
+  
   font-size: 0.6rem;
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.01em;
   color: var(--text);
   display: block;
 }
 
 a.logo-mark .line-bottom {
-  font-family: var(--font-mono);
+  
   font-size: 0.98rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--text);
   display: block;
@@ -267,7 +268,7 @@ a.logo-mark .line-bottom {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background: #111;
+  background: #969696;
   flex-shrink: 0;
 }
 
@@ -279,7 +280,7 @@ a.logo-mark .line-bottom {
   background-size: cover;
   background-position: center;
   filter: grayscale(100%);
-  opacity: 0.75;
+  opacity: 0.5;
   transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
