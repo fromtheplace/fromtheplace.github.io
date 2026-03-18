@@ -561,7 +561,7 @@ function closeModal() {
       }
 
 document.addEventListener('click', (e) => {
-  const card = e.target.closest('.project');
+  const card = e.target.closest('.proj-cell');
   if (!card) return;
 
   const id = card.getAttribute('data-project-id');
