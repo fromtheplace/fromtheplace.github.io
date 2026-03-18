@@ -34,9 +34,10 @@
     cell.setAttribute('aria-label', 'Open project: ' + title);
 
     if (isFeatured) {
-      /* Featured: bg fills entire cell, text overlaid at bottom */
       cell.innerHTML =
-        '<div class="proj-bg"' + bgStyle + '></div>' +
+        '<div class="proj-img-wrap">' +
+          '<div class="proj-bg"' + bgStyle + '></div>' +
+        '</div>' +
         '<div class="proj-text">' +
           '<div class="proj-num">' + num + ' — featured</div>' +
           '<div class="proj-title">' + title + '</div>' +
