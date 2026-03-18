@@ -60,6 +60,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   z-index: -2;
   pointer-events: none;
+  opacity: 0.35;
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 72%, transparent 100%);
   mask-image:         linear-gradient(to bottom, transparent 0%, black 12%, black 72%, transparent 100%);
 }
@@ -80,6 +81,41 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   pointer-events: none;
   border: none;
+}
+
+/* ── LOGOTITLE (header mark) ── */
+/* Scaled to fit 54px header. Base 1rem → from the: 80%=0.8rem, place: 130%=1.3rem */
+a.logo-mark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid var(--border-md);
+  border-radius: 12px;          /* 39px scaled proportionally to header size */
+  padding: 0.35rem 0.65rem 0.45rem;
+  line-height: 0.85;
+  text-align: center;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+a.logo-mark:hover { border-color: var(--text); }
+
+a.logo-mark .line-top {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  display: block;
+}
+
+a.logo-mark .line-bottom {
+  font-family: var(--font-mono);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  display: block;
 }
 
 /* ── THEME TOGGLE ── */
@@ -122,14 +158,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
 }
 
-.logo {
-  font-family: var(--font-serif);
-  font-size: 21px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  line-height: 1;
-}
-.logo em { font-style: italic; color: var(--muted); }
+/* .logo text typemark replaced by .logo-mark pill */
 
 .nav { display: flex; gap: 1.75rem; }
 .nav a {
