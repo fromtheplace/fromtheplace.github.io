@@ -11,7 +11,6 @@
 </head>
 <body>
 
-  <!-- BG VIDEO -->
   <div class="hero-video">
     <div class="video-wrapper">
       <iframe src="https://www.youtube.com/embed/Ak7f9zN5irU?autoplay=1&mute=1&controls=0&loop=1&playlist=Ak7f9zN5irU&playsinline=1"
@@ -56,7 +55,7 @@
           </div>
           <div class="info-block">
             <div class="info-label">Contact</div>
-            <div class="info-val"><a href="/cdn-cgi/l/email-protection#f99b9598949b96819a908d80b99e94989095d79a9694"><span class="__cf_email__" data-cfemail="84e6e8e5e9e6ebfce7edf0fdc4e3e9e5ede8aae7ebe9">[email&#160;protected]</span></a></div>
+            <div class="info-val"><a href="mailto:blamboxcity@gmail.com">blamboxcity@gmail.com</a></div>
           </div>
           <div class="info-block">
             <div class="info-label">Services</div>
@@ -80,27 +79,22 @@
     </div>
   </footer>
 
-  <!-- PROJECT MODAL -->
   <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-content">
-
       <div class="modal-header">
         <div class="modal-counter">
           <span id="modal-current-index">1</span> / <span id="modal-total-count">7</span>
         </div>
         <button class="modal-close-x" aria-label="Close">&times;</button>
       </div>
-
       <div class="modal-video-strip">
         <div id="modalVideoContainer" class="embed-container"></div>
       </div>
-
       <div class="modal-body-wrap">
         <div class="modal-media-col">
           <div id="modalImageContainer" class="modal-images"></div>
         </div>
         <div class="modal-info-col">
-
           <div class="modal-text-col">
             <div class="modal-footer-nav modal-top-nav">
               <button class="modal-prev" aria-label="Previous Project">
@@ -117,21 +111,23 @@
             <p id="modal-description"></p>
             <div id="modal-body"></div>
           </div>
-
           <div class="chips">
             <div id="yt-chip-container" class="chip-container"></div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- IMAGE LIGHTBOX -->
   <div id="image-lightbox-overlay" style="display:none;">
     <span id="lightbox-close">&times;</span>
     <img id="lightbox-img" src="" alt="" />
   </div>
 
-  <script data-cfasync="false" src=
+  <script src="projects-data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
