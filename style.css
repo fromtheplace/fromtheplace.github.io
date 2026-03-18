@@ -298,8 +298,9 @@ a.logo-mark .line-bottom {
   transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
-.proj-cell:first-child .proj-img-wrap .proj-bg {
-  padding-bottom: 52%;   /* featured tile a bit wider/shallower */
+.proj-cell:first-child .proj-img-wrap .proj-bg,
+.proj-cell:nth-child(2) .proj-img-wrap .proj-bg {
+  padding-bottom: 52%;
 }
 
 .proj-cell:hover .proj-img-wrap .proj-bg {
@@ -332,7 +333,8 @@ a.logo-mark .line-bottom {
   color: var(--text);
 }
 
-.proj-cell:first-child .proj-title { font-size: 20px; }
+.proj-cell:first-child .proj-title,
+.proj-cell:nth-child(2) .proj-title { font-size: 20px; }
 
 .proj-badge {
   font-size: 9px;
