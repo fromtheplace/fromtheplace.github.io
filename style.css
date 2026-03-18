@@ -511,27 +511,30 @@ a.logo-mark .line-bottom {
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 1.25rem;
-  row-gap: 0.7rem;
-  align-content: start;
+  align-items: start;
   overflow: visible;
 }
 
-/* nav, badge, title, description, body all span full width */
+.modal-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* chips locked to right column */
+.chips {
+  align-self: start;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* remove old full-span overrides */
 .modal-top-nav,
 .modal-badge,
 #modal-title,
 #modal-description,
 #modal-body {
-  grid-column: 1 / -1;
-}
-
-/* chips locked to right column, starting from row 1 */
-.chips {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  margin-top: 0;
-  padding-top: 0;
-  align-self: start;
+  grid-column: unset;
 }
 
 .modal-badge {
