@@ -352,6 +352,7 @@ a.logo-mark .line-bottom {
   padding: 0.65rem 0;
   border-top: 0.5px solid var(--border);
   margin-top: var(--gap);
+  display: none;
 }
 
 /* ── INFO / CONTACT ── */
