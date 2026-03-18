@@ -82,7 +82,7 @@ const projectData = {
         "images/mfp0.jpg"
       ],
       "description": "In February 2020, just before lockdowns, New New New hosted its largest and most ambitious line-up to date. Music for People featured 11 genre-spanning acts, from rap to rock and everything in between. The follow-up expanded to 32 acts across two distinct sessions: an afternoon in St Paul's Cathedral and an evening at Starters Bar. <br/><br/>  <strong><em>From the Place</em></strong>  led both the creative and technical direction, developing a cohesive visual identity and a multi-platform production workflow. This included multicam live video streaming for both sessions, real-time on-site camera projection, and live audio mastering for high-fidelity broadcast and archival delivery. All graphic assets—across print, digital, and motion—were designed in-house, along with a custom ecommerce and ticketing platform featuring artist profiles, schedules, and sales integration. The result was a seamless, hybrid production that bridged audiences across spaces and styles, delivering a unified experience in both physical and digital form.",
-      "creditsHTML": "<div class=\"credit-list\">\n      <h2>Scope</h2>\n      <ul>\n        <li>Multicam Live Video Production</li>\n        <li>Live Audio Mastering</li>\n        <li>Graphic Design</li>\n        <li>Ecommerce/Ticketing website</li>\n        <li>Music Compostion/Teaser Video Production</li>\n      </ul>\n    </div>",
+      "creditsHTML": "<div class=\"credit-list\">\n      <h2>Scope</h2>\n      <ul>\n        <li>Multicam Live Video Production</li>\n        <li>Live Audio Mastering</li>\n        <li>Graphic Design</li>\n        <li>Ecommerce/Ticketing website</li>\n        <li>Music Composition/Teaser Video Production</li>\n      </ul>\n    </div>",
       "html_badge": "Design / Video / Stream",
       "html_image": "images/mfp0.jpg",
       "html_h4": "Music for People",
@@ -170,7 +170,7 @@ const projectData = {
           "timestamp": "7h28m51s"
         }
       ],
-      "description": "Initially Poster/campaign design work lead to collaborating to create and impromptu online music fest.\n<br/><br/>\nDuring the pandemic, livestreaming grew popular. Waitati Music Festival was the first local event streamed, aggregating all the artists perfomances into a single stream. <strong><em>From the Place</em></strong> managed all \nfacets of promotion and admin, through to producing live mastered audio and on screen display within a seemless broadcast - saving the event's continutiy and providng a production that stood out through the lockdown.",
+      "description": "Initial Poster/campaign design work lead to collaborating to create an impromptu online music fest.\n<br/><br/>\nDuring the pandemic, livestreaming grew popular. Waitati Music Festival was the first local event streamed, aggregating all the artists performances into a single stream. <strong><em>From the Place</em></strong> managed all \nfacets of promotion and admin, through to producing live mastered audio and on screen display within a seamless broadcast - saving the event's continuity and providng a production that stood out through the lockdown.",
       "creditsHTML": "<div class=\"credit-list\">\n      <h2>Scope</h2>\n      <ul>\n        <li>Campaign Design</li>\n        <li>Livestream production</li>\n\t <li>On Screen graphics</li>\n      </ul>\n    </div>",
       "html_badge": "Design / Video / Stream",
       "html_image": "images/wmfl.jpg",
@@ -309,7 +309,7 @@ const projectData = {
     }
   },
   "project_order": [
-      "7",
+   "7",
   "4",
   "1",
   "3",
