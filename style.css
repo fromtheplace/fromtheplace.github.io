@@ -233,13 +233,37 @@ a.logo-mark .line-bottom {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--gap);
   background: var(--border);
   border: 0.5px solid var(--border);
 }
 
-.projects-grid .proj-cell:first-child { grid-column: span 2; }
+/* First two items span 2 of 4 cols = 50% each */
+.projects-grid .proj-cell:first-child,
+.projects-grid .proj-cell:nth-child(2) {
+  grid-column: span 2;
+}
+
+/* Items 3+ each span 1 of 4 cols — but we want 3 per row,
+   so wrap them in a nested 3-col subgrid context by forcing
+   item 3 to start at col 1 and each to span 4/3 ≈ use display:contents trick.
+   Cleanest approach: switch remaining cells to span across a 12-unit system
+   via a 12-col grid where first two = 6 each, rest = 4 each */
+
+/* Override: use 12 implicit columns */
+.projects-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.projects-grid .proj-cell:first-child,
+.projects-grid .proj-cell:nth-child(2) {
+  grid-column: span 6;
+}
+
+.projects-grid .proj-cell:nth-child(n+3) {
+  grid-column: span 4;
+}
 
 /* ── ALL CELLS ── */
 .proj-cell {
@@ -697,14 +721,14 @@ a.logo-mark .line-bottom {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 760px) {
+  /* Collapse to 2-col: first two full width, rest half */
   .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .projects-grid .proj-cell:first-child { grid-column: span 2; }
-  .proj-cell:first-child { min-height: 220px; }
-  .proj-cell:first-child .proj-title { font-size: 20px; }
+  .projects-grid .proj-cell:first-child,
+  .projects-grid .proj-cell:nth-child(2) { grid-column: span 2; }
+  .projects-grid .proj-cell:nth-child(n+3) { grid-column: span 1; }
 
   .info-grid { grid-template-columns: 1fr 1fr; }
 
-  /* modal: 1 col images : 2 col info on mobile */
   .modal-body-wrap { grid-template-columns: 1fr 2fr; }
 
   .footer-inner { flex-direction: column; gap: 0.3rem; }
@@ -712,6 +736,8 @@ a.logo-mark .line-bottom {
 
 @media (max-width: 460px) {
   .projects-grid { grid-template-columns: 1fr; }
-  .projects-grid .proj-cell:first-child { grid-column: span 1; }
+  .projects-grid .proj-cell:first-child,
+  .projects-grid .proj-cell:nth-child(2),
+  .projects-grid .proj-cell:nth-child(n+3) { grid-column: span 1; }
   .info-grid { grid-template-columns: 1fr; }
 }
