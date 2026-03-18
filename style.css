@@ -511,7 +511,7 @@ a.logo-mark .line-bottom {
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 1.25rem;
-  align-items: start;
+  align-items: stretch;
   overflow: visible;
 }
 
@@ -668,9 +668,22 @@ a.logo-mark .line-bottom {
 }
 
 /* Bandcamp iframe */
-.iframe-chip-container { width: 100%; margin-top: 0.4rem; }
-.iframe-chip-title {
-  font-size: 9px;
+.iframe-chip-container {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.4rem;
+  overflow: hidden;
+}
+.iframe-chip-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.iframe-chip-wrapper iframe {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  display: block;
+}  font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--faint);
@@ -757,6 +770,10 @@ a.logo-mark .line-bottom {
   .projects-grid .proj-cell:nth-child(n+3) { grid-column: span 1; }
 
   .info-grid { grid-template-columns: 1fr 1fr; }
+
+  /* modal info col: single column, chips flow below text */
+  .modal-info-col { grid-template-columns: 1fr; }
+  .chips { align-self: start; }
 
   .footer-inner { flex-direction: column; gap: 0.3rem; }
 }
