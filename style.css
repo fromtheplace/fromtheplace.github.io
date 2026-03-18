@@ -554,6 +554,11 @@ a.logo-mark .line-bottom {
   color: var(--faint);
   font-weight: 400;
   margin-bottom: 0.35rem;
+  border-top: 1px solid;
+    border-top-color: currentcolor;
+  border-color: var(--text);
+  padding-top: 1rem;
+  margin-top: 1rem;
 }
 
 #modal-body .credit-list ul {
