@@ -1,160 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From the Place - Studio Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="styles_ds.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From the Place — Studio Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Mobile Toggle Button -->
-    <button class="mobile-toggle" onclick="toggleSidebar()">≡</button>
-    
-    <div class="container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
-            <div class="logo">
-                <img src="images/logo-S.png" height="120" alt="From the Place">
-                <p>Studio Portfolio</p>
-            </div>
-            <nav class="nav-menu">
-                <div class="nav-section">
-                    <a class="nav-item" onclick="showSection('projects')">Projects</a>
-                    <a class="nav-item" onclick="showSection('contact')">Contact</a>
-                </div>
-            </nav>
-        </aside>
-        
-        <!-- Hero Video Section -->
-        <section class="hero-video">
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/Ak7f9zN5irU?autoplay=1&mute=1&controls=0&loop=1&playlist=Ak7f9zN5irU"
-                    frameborder="0" 
-                    allow="autoplay; encrypted-media" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="hero-overlay"></div>
-        </section>
-        
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Projects Section -->
-            <section id="projects" class="content-section active">
-                <div class="about-content">
-                    <h2 id="ftp" class="section-title logotitle">
-                        <span style="font-size: 80%;">from the</span><br>
-                        <span style="font-size: 130%;">place</span>
-                    </h2>
 
-                   <p class="about-intro" style="margin-bottom:10rem;">Creation + Capture x Production
-						</p> 
-						<span style="font-size:smallest; color:#a3a3a3; font-style:italic;">
-                        visual narratives and multimedia experiences.
-                    </span>
-                    
-                    
-                </div>
-                
-                
-                <div id="projects-container" class="project-group"></div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="content-section">
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h2 class="section-title">Contact</h2>
-                        <p>Feel free to reach out via <a href="mailto:blamboxcity@gmail.com">blamboxcity@gmail.com</a>.</p>
-						
-                    </div>
-                </div>
-				<div class="skills-section">
-                        <div class="skills-grid">
-							<div class="skill-category">
-                                <h3>Design</h3>
-                                <ul class="skill-list">
-                                    <li>Graphic / Poster Design</li>
-                                    <li>Offset / Digital / Screen Print Production</li>
-                                </ul>
-                            </div>
-                       
-							<div class="skill-category">
-                                <h3>Video</h3>
-                                <ul class="skill-list">
-                                    <li>Podcast Production</li>
-                                    <li>Multicam Live Video</li>
-                                    <li>Video & Motion Graphic production</li>
-                                </ul>
-                            </div>
-							<div class="skill-category">
-                                <h3>Production </h3>
-                                <ul class="skill-list">
-                                    <li>Event videography</li>
-                                    <li>Video editing & post production</li>
-                                    <li>Live Audio Production</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-					<h5 style="max-width:60%;margin:4rem auto;">This portfolio is a responsive single page built with JavaScript.
-						A simple Python UI is used to streamline content, creating and managing 'project' JSON data and media content.</h5>
-            </section>
-        </main>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">from <em>the</em> place</a>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">&#9776;</button>
     </div>
-
-    <!-- Project Modal -->
-    <div id="project-modal" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <div class="modal-header">
-    <div class="modal-project-counter">
-        <span id="modal-current-index">1</span> / <span id="modal-total-count">10</span>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#projects" onclick="toggleMobileNav()">Projects</a>
+      <a href="#contact" onclick="toggleMobileNav()">Contact</a>
     </div>
-    <button class="modal-close-x" aria-label="Close">×</button>
-</div>
+  </header>
 
-            <h2 id="modal-title">Project Title</h2>
+  <main>
 
-            <div id="modalVideoContainer" class="embed-container"></div>
-            
-            <p id="modal-description">Project description here...</p>
-            
-            <div id="modal-body"></div>
-            
-            <div class="chips">
-                
-                <div id="yt-chip-container" class="chip-container"></div>
-            </div>
-            
-            <div id="modalImageContainer" class="modal-images"></div>
-			
-			<div class="modal-footer-nav">
-    <button class="modal-prev" aria-label="Previous Project">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 18l-6-6 6-6"/>
-        </svg>
-    </button>
-    <button class="modal-next" aria-label="Next Project">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 18l6-6-6-6"/>
-        </svg>
-    </button>
-</div>
+    <!-- INTRO -->
+    <section class="intro-section">
+      <div class="container">
+        <p class="studio-line">Creation + Capture &times; Production &mdash; visual narratives and multimedia experiences.</p>
+        <div class="tags">
+          <span>Multicam Live Video</span>
+          <span>Graphic Design</span>
+          <span>Offset / Screen Print</span>
+          <span>Podcast Production</span>
+          <span>Motion Graphics</span>
+          <span>Event Videography</span>
+          <span>Post Production</span>
+          <span>Live Audio</span>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Image Lightbox -->
-    <div id="image-lightbox-overlay" style="display: none;">
-        <span id="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-    </div>
+    <!-- PROJECTS GRID -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div class="section-label">Selected projects</div>
+        <div id="projects-grid" class="projects-grid">
+          <!-- populated by projects-data.js + render.js -->
+        </div>
+        <div class="project-count" id="project-count"></div>
+      </div>
+    </section>
 
-    <!-- JavaScript Files -->
-    <script src="js/utilities.js"></script>
-    <script src="projects-data.js"></script>
-    <script src="js/render-projects.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/main.js"></script>
+    <!-- INFO / CONTACT -->
+    <section class="info-section" id="contact">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-label">Location</div>
+            <div class="info-val">Ōtepoti / Dunedin, NZ</div>
+          </div>
+          <div class="info-block">
+            <div class="info-label">Disciplines</div>
+            <div class="info-val">Design &middot; Video &middot; Audio &middot; Print</div>
+          </div>
+          <div class="info-block">
+            <div class="info-label">Contact</div>
+            <div class="info-val">
+              <a href="mailto:blamboxcity@gmail.com">blamboxcity@gmail.com</a>
+            </div>
+          </div>
+          <div class="info-block">
+            <div class="info-label">Services</div>
+            <div class="info-val">
+              Graphic / Poster Design &middot; Offset / Digital / Screen Print &middot;
+              Podcast Production &middot; Multicam Live Video &middot;
+              Video &amp; Motion Graphics &middot; Event Videography &middot;
+              Video Editing &amp; Post Production &middot; Live Audio Production
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; From the Place</span>
+      <span class="footer-note">Single page &middot; JSON-driven</span>
+    </div>
+  </footer>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div class="modal-counter">
+          <span id="modal-current-index">1</span> / <span id="modal-total-count">7</span>
+        </div>
+        <button class="modal-close-x" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="modal-body-wrap">
+        <div class="modal-media-col">
+          <div id="modalVideoContainer" class="embed-container"></div>
+          <div id="modalImageContainer" class="modal-images"></div>
+        </div>
+
+        <div class="modal-info-col">
+          <div id="modal-badge" class="modal-badge"></div>
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+          <div id="modal-body"></div>
+
+          <div class="chips">
+            <div id="yt-chip-container" class="chip-container"></div>
+          </div>
+
+          <div class="modal-footer-nav">
+            <button class="modal-prev" aria-label="Previous Project">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              Prev
+            </button>
+            <button class="modal-next" aria-label="Next Project">
+              Next
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- IMAGE LIGHTBOX -->
+  <div id="image-lightbox-overlay" style="display:none;">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <!-- SCRIPTS — same order as original -->
+  <script src="projects-data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
