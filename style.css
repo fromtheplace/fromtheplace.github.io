@@ -141,7 +141,7 @@ a.logo-mark .line-bottom {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(245, 243, 238, 0.55);
+  background: rgba(256, 256, 256, 0.75);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-bottom: 0.5px solid var(--border);
