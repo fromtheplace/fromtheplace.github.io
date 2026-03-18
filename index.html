@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>From the Place — Studio Portfolio</title>
+  <title>From the Place - Studio Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +11,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="logo">from <em>the</em> place</a>
@@ -29,7 +28,6 @@
 
   <main>
 
-    <!-- INTRO -->
     <section class="intro-section">
       <div class="container">
         <p class="studio-line">Creation + Capture &times; Production &mdash; visual narratives and multimedia experiences.</p>
@@ -46,24 +44,20 @@
       </div>
     </section>
 
-    <!-- PROJECTS GRID -->
     <section class="projects-section" id="projects">
       <div class="container">
         <div class="section-label">Selected projects</div>
-        <div id="projects-grid" class="projects-grid">
-          <!-- populated by projects-data.js + render.js -->
-        </div>
+        <div id="projects-grid" class="projects-grid"></div>
         <div class="project-count" id="project-count"></div>
       </div>
     </section>
 
-    <!-- INFO / CONTACT -->
     <section class="info-section" id="contact">
       <div class="container">
         <div class="info-grid">
           <div class="info-block">
             <div class="info-label">Location</div>
-            <div class="info-val">Ōtepoti / Dunedin, NZ</div>
+            <div class="info-val">Otepoti / Dunedin, NZ</div>
           </div>
           <div class="info-block">
             <div class="info-label">Disciplines</div>
@@ -71,9 +65,7 @@
           </div>
           <div class="info-block">
             <div class="info-label">Contact</div>
-            <div class="info-val">
-              <a href="/cdn-cgi/l/email-protection#97f5fbf6faf5f8eff4fee3eed7f0faf6fefbb9f4f8fa"><span class="__cf_email__" data-cfemail="a7c5cbc6cac5c8dfc4ced3dee7c0cac6cecb89c4c8ca">[email&#160;protected]</span></a>
-            </div>
+            <div class="info-val"><a href="mailto:blamboxcity@gmail.com">blamboxcity@gmail.com</a></div>
           </div>
           <div class="info-block">
             <div class="info-label">Services</div>
@@ -97,36 +89,29 @@
     </div>
   </footer>
 
-  <!-- PROJECT MODAL -->
   <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-content">
-
       <div class="modal-header">
         <div class="modal-counter">
           <span id="modal-current-index">1</span> / <span id="modal-total-count">7</span>
         </div>
         <button class="modal-close-x" aria-label="Close">&times;</button>
       </div>
-
       <div class="modal-video-strip">
         <div id="modalVideoContainer" class="embed-container"></div>
       </div>
-
       <div class="modal-body-wrap">
         <div class="modal-media-col">
           <div id="modalImageContainer" class="modal-images"></div>
         </div>
-
         <div class="modal-info-col">
           <div id="modal-badge" class="modal-badge"></div>
           <h2 id="modal-title"></h2>
           <p id="modal-description"></p>
           <div id="modal-body"></div>
-
           <div class="chips">
             <div id="yt-chip-container" class="chip-container"></div>
           </div>
-
           <div class="modal-footer-nav">
             <button class="modal-prev" aria-label="Previous Project">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
@@ -139,15 +124,18 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- IMAGE LIGHTBOX -->
   <div id="image-lightbox-overlay" style="display:none;">
     <span id="lightbox-close">&times;</span>
     <img id="lightbox-img" src="" alt="" />
   </div>
 
-  <!-- SCRIPTS — same order as original -->
-  <script data-cfasync="false" src
+  <script src="projects-data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
