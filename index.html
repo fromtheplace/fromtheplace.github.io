@@ -26,17 +26,11 @@
         <span class="line-bottom">place</span>
       </a>
       <div class="header-studio-line">
-      Creation + Capture &times; Production &mdash; visual narratives and multimedia experiences.
-    </div>
-	  <nav class="nav">
-           <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#9790;</button>
+        Creation + Capture &times; Production &mdash; visual narratives and multimedia experiences.
+      </div>
+      <nav class="nav">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#9790;</button>
       </nav>
-      <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">&#9776;</button>
-    </div>
-    
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#projects" onclick="toggleMobileNav()">Projects</a>
-      <a href="#contact" onclick="toggleMobileNav()">Contact</a>
     </div>
   </header>
 
@@ -44,7 +38,6 @@
 
     <section class="projects-section" id="projects">
       <div class="container">
-        <div class="section-label">Selected projects</div>
         <div id="projects-grid" class="projects-grid"></div>
         <div class="project-count" id="project-count"></div>
       </div>
@@ -90,20 +83,36 @@
   <!-- PROJECT MODAL -->
   <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-content">
+
       <div class="modal-header">
         <div class="modal-counter">
           <span id="modal-current-index">1</span> / <span id="modal-total-count">7</span>
         </div>
         <button class="modal-close-x" aria-label="Close">&times;</button>
       </div>
+
       <div class="modal-video-strip">
         <div id="modalVideoContainer" class="embed-container"></div>
       </div>
+
       <div class="modal-body-wrap">
         <div class="modal-media-col">
           <div id="modalImageContainer" class="modal-images"></div>
         </div>
         <div class="modal-info-col">
+
+          <!-- Nav cloned to top -->
+          <div class="modal-footer-nav modal-top-nav">
+            <button class="modal-prev" aria-label="Previous Project">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              Prev
+            </button>
+            <button class="modal-next" aria-label="Next Project">
+              Next
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+
           <div id="modal-badge" class="modal-badge"></div>
           <h2 id="modal-title"></h2>
           <p id="modal-description"></p>
@@ -111,6 +120,8 @@
           <div class="chips">
             <div id="yt-chip-container" class="chip-container"></div>
           </div>
+
+          <!-- Nav at bottom -->
           <div class="modal-footer-nav">
             <button class="modal-prev" aria-label="Previous Project">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
@@ -121,8 +132,10 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
             </button>
           </div>
+
         </div>
       </div>
+
     </div>
   </div>
 

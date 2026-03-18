@@ -186,30 +186,12 @@ a.logo-mark .line-bottom {
 
 .nav-toggle {
   display: none;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: var(--text);
-  line-height: 1;
-  padding: 0;
 }
 
 .mobile-nav {
   display: none;
-  flex-direction: column;
-  padding: 1rem var(--pad);
-  border-top: 0.5px solid var(--border);
-  gap: 0.75rem;
-  background: var(--bg);
 }
-.mobile-nav.open { display: flex; }
-.mobile-nav a {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+
 
 /* ── INTRO ── */
 .intro-section {
@@ -653,6 +635,15 @@ a.logo-mark .line-bottom {
   margin-top: 0.5rem;
 }
 
+.modal-top-nav {
+  padding-top: 0;
+  border-top: none;
+  margin-top: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.5px solid var(--border);
+  margin-bottom: 0.25rem;
+}
+
 .modal-footer-nav button {
   display: flex;
   align-items: center;
@@ -707,9 +698,6 @@ a.logo-mark .line-bottom {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 760px) {
-  .nav { display: none; }
-  .nav-toggle { display: block; }
-
   .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .projects-grid .proj-cell:first-child { grid-column: span 2; }
   .proj-cell:first-child { min-height: 220px; }
@@ -717,8 +705,8 @@ a.logo-mark .line-bottom {
 
   .info-grid { grid-template-columns: 1fr 1fr; }
 
-  .modal-body-wrap { grid-template-columns: 1fr; }
-  .modal-media-col { border-right: none; border-bottom: 0.5px solid var(--border); }
+  /* modal: 1 col images : 2 col info on mobile */
+  .modal-body-wrap { grid-template-columns: 1fr 2fr; }
 
   .footer-inner { flex-direction: column; gap: 0.3rem; }
 }
