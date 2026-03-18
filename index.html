@@ -14,7 +14,8 @@
   <!-- BG VIDEO -->
   <div class="hero-video">
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/Ak7f9zN5irU?autoplay=1&mute=1&controls=0&loop=1&playlist=Ak7f9zN5irU&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Ak7f9zN5irU?autoplay=1&mute=1&controls=0&loop=1&playlist=Ak7f9zN5irU&playsinline=1"
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -54,12 +55,6 @@
 
     <section class="projects-section" id="projects">
       <div class="container">
-        <div class="logotitle-wrap">
-          <h2 class="section-title logotitle">
-            <span style="font-size:80%;">from the</span><br>
-            <span style="font-size:130%;">place</span>
-          </h2>
-        </div>
         <div class="section-label">Selected projects</div>
         <div id="projects-grid" class="projects-grid"></div>
         <div class="project-count" id="project-count"></div>
@@ -79,7 +74,7 @@
           </div>
           <div class="info-block">
             <div class="info-label">Contact</div>
-            <div class="info-val"><a href="/cdn-cgi/l/email-protection#6e0c020f030c01160d071a172e09030f0702400d0103"><span class="__cf_email__" data-cfemail="f597999498979a8d969c818cb59298949c99db969a98">[email&#160;protected]</span></a></div>
+            <div class="info-val"><a href="mailto:blamboxcity@gmail.com">blamboxcity@gmail.com</a></div>
           </div>
           <div class="info-block">
             <div class="info-label">Services</div>
@@ -103,6 +98,7 @@
     </div>
   </footer>
 
+  <!-- PROJECT MODAL -->
   <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-content">
       <div class="modal-header">
@@ -141,9 +137,16 @@
     </div>
   </div>
 
+  <!-- IMAGE LIGHTBOX -->
   <div id="image-lightbox-overlay" style="display:none;">
     <span id="lightbox-close">&times;</span>
     <img id="lightbox-img" src="" alt="" />
   </div>
 
-  <script data-cfasync="false" src=
+  <script src="projects-data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
