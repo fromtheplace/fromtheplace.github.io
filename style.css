@@ -141,7 +141,7 @@ a.logo-mark .line-bottom {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(256, 256, 256, 0.75);
+  background: rgba(245, 243, 238, 0.55);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-bottom: 0.5px solid var(--border);
@@ -519,6 +519,7 @@ a.logo-mark .line-bottom {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+  min-width: 0;
 }
 
 /* chips locked to right column */
@@ -526,6 +527,8 @@ a.logo-mark .line-bottom {
   align-self: end;
   padding-top: 0;
   margin-top: 0;
+  min-width: 0;
+  overflow: hidden;
 }
 
 /* remove old full-span overrides */
@@ -772,8 +775,19 @@ a.logo-mark .line-bottom {
   .info-grid { grid-template-columns: 1fr 1fr; }
 
   /* modal info col: single column, chips flow below text */
-  .modal-info-col { grid-template-columns: 1fr; }
-  .chips { align-self: start; }
+  .modal-info-col {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+  .chips {
+    align-self: start;
+    width: 100%;
+    min-width: 0;
+  }
+  .modal-text-col {
+    min-width: 0;
+    width: 100%;
+  }
 
   .footer-inner { flex-direction: column; gap: 0.3rem; }
 }
