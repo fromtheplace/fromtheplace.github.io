@@ -508,10 +508,30 @@ a.logo-mark .line-bottom {
 
 .modal-info-col {
   padding: 1.5rem 1.5rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0.7rem;
+  align-content: start;
   overflow: visible;
+}
+
+/* nav, badge, title, description, body all span full width */
+.modal-top-nav,
+.modal-badge,
+#modal-title,
+#modal-description,
+#modal-body {
+  grid-column: 1 / -1;
+}
+
+/* chips locked to right column, starting from row 1 */
+.chips {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  margin-top: 0;
+  padding-top: 0;
+  align-self: start;
 }
 
 .modal-badge {
@@ -575,7 +595,6 @@ a.logo-mark .line-bottom {
 #modal-body .credit-list li:last-child { border-bottom: none; }
 
 /* ── CHIPS ── */
-.chips { margin-top: auto; padding-top: 0.75rem; }
 
 .chip-container {
   display: flex;
