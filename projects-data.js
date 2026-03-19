@@ -170,7 +170,7 @@ const projectData = {
           "timestamp": "7h28m51s"
         }
       ],
-      "description": "Initial Poster/campaign design work lead to collaborating to create an impromptu online music fest.\n<br/><br/>\nDuring the pandemic, livestreaming grew popular. Waitati Music Festival was the first local event streamed, aggregating all the artists performances into a single stream. <strong><em>From the Place</em></strong> managed all \nfacets of promotion and admin, through to producing live mastered audio and on screen display within a seamless broadcast - saving the event's continuity and providng a production that stood out through the lockdown achieving over 16k views organically on a platform with less than 1000 followers the time.",
+      "description": "Initial Poster/campaign design work lead to collaborating to create an impromptu online music fest.\n<br/><br/>\nDuring the pandemic, livestreaming grew popular. Waitati Music Festival was the first local event streamed, aggregating all the artists performances into a single stream. <strong><em>From the Place</em></strong> managed all \nfacets of promotion and admin, through to producing live mastered audio and on screen display within a seamless broadcast - saving the event's continuity and providng a production that stood out through the lockdown achieving over 16k views organically on a platform with less than 1000 followers at the time.",
       "creditsHTML": "<div class=\"credit-list\">\n      <h2>Scope</h2>\n      <ul>\n        <li>Campaign Design</li>\n        <li>Livestream production</li>\n\t <li>On Screen graphics</li>\n      </ul>\n    </div>",
       "html_badge": "Design / Video / Stream",
       "html_image": "images/wmfl.jpg",
