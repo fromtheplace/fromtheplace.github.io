@@ -616,5 +616,9 @@ if (modalPrev) {
           if (e.key === 'ArrowLeft') showPrevProject();
         }
       });
+
+      /* expose for deep-link in main.js */
+      window.openModal = openModal;
+      window.closeModal = closeModal;
     });
  

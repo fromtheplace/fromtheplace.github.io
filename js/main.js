@@ -14,6 +14,28 @@ document.querySelectorAll('.mobile-nav a').forEach(function (a) {
 
 window.toggleMobileNav = toggleMobileNav;
 
+/* ── DEEP LINK: open modal from ?project=ID ── */
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var id = params.get('project');
+  if (!id) return;
+
+  /* openModal is defined inside modal.js DOMContentLoaded, so wait for it */
+  function tryOpen () {
+    if (typeof openModal === 'function') {
+      openModal(id);
+    } else {
+      setTimeout(tryOpen, 50);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(tryOpen, 100); });
+  } else {
+    setTimeout(tryOpen, 100);
+  }
+})();
+
 /* ── DARK MODE TOGGLE ── */
 (function () {
   var btn = document.getElementById('themeToggle');
