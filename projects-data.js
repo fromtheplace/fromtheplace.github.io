@@ -177,9 +177,10 @@ const projectData = {
       "html_h4": "Waitati Music Festival",
       "html_description": "Brand & campaign design, Livestream production",
       "images": [
+        "images/livestats.jpg",
         "images/wmfl_sets.png",
-        "images/wmf20.jpg",
-        "images/livestats.jpg"
+        "images/wmf20.jpg"
+        
       ]
     },
     "5": {
