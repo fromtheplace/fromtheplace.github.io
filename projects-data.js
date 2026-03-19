@@ -323,9 +323,23 @@ const projectData = {
       ],
       "html_image": "images/3.jpg",
       "title": "New Zealand Tall Blacks Teamwear",
-      "youtube": "kl4agACR-98",
-      "startTime": 1880,
-      "description": "This work coincided with 2007 tests between the Tall Blacks and other Oceanic teams vying for Olympic qualification. During this time, the team introduced Tū Kaha, a haka centred on unity and collective strength, with references to native flora informing the visual direction of the kit.\n\nMy role involved designing the teamwear, incorporating a fern pattern along the side panels as a subtle expression of national identity and a reference to the National Basketball Organisation’s branding. The design balanced performance with a clean, modern aesthetic, reinforcing themes of connection and cohesion while maintaining a strong on-court presence.\n\nAddional responsibilites included prepress prepartion of the entire team roster, and design direction of off-court team kit."
+      "youtube": "sxdiCVc4jEc",
+      "startTime": 1668,
+      "description": "This work coincided with 2007 tests between the Tall Blacks and other Oceanic teams vying for Olympic qualification. During this time, the team introduced Tū Kaha, a haka centred on unity and collective strength, with references to native flora informing the visual direction of the kit.\n\nMy role involved designing the teamwear, incorporating a fern pattern along the side panels as a subtle expression of national identity and a reference to the National Basketball Organisation’s branding. The design balanced performance with a clean, modern aesthetic, reinforcing themes of connection and cohesion while maintaining a strong on-court presence.\n\nAddional responsibilites included prepress prepartion of the entire team roster, and design direction of off-court team kit.",
+      "chips": [
+        {
+          "type": "youtube",
+          "id": "kl4agACR-98",
+          "title": "Tall Blacks",
+          "startTime": 1880
+        },
+        {
+          "type": "youtube",
+          "id": "fPGyetrWbh8",
+          "title": "Gameface Classic",
+          "startTime": 212
+        }
+      ]
     }
   },
   "project_order": [
