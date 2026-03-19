@@ -313,13 +313,7 @@ const projectData = {
       "customIframe": "https://www.youtube.com/watch?v=kl4agACR-98&t=1880s",
       "images": [
         "images/1.jpg",
-        "images/3.jpg",
-        "images/rams1.jpg",
-        "images/rams2.jpg",
-        "images/surv1.jpg",
-        "images/surv2.jpg",
-        "images/lege1.jpg",
-        "images/lege2.jpg"
+        "images/3.jpg"
       ],
       "html_image": "images/3.jpg",
       "title": "New Zealand Tall Blacks Teamwear",
