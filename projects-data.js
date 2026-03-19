@@ -132,7 +132,7 @@ const projectData = {
         "images/nook_poster.jpg",
         "images/ncmtv.jpg",
         "images/Nook_banner.jpg",
-        "images/BSSC.png"
+        "images/livestats.jpg"
       ],
       "html_badge": "Design / Video / Stream",
       "html_image": "images/178799204_3729780010482660_6832248583617810706_n.jpg",
@@ -178,7 +178,8 @@ const projectData = {
       "html_description": "Brand & campaign design, Livestream production",
       "images": [
         "images/wmfl_sets.png",
-        "images/wmf20.jpg"
+        "images/wmf20.jpg",
+        "images/livestats.jpg"
       ]
     },
     "5": {
