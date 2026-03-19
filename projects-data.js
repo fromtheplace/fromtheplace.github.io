@@ -308,30 +308,36 @@ const projectData = {
       "description": "FTP TV is a web-hosted, TV-style index for music and performance video content. It functions as a lightweight streaming hub, presenting locally focused channels under a single broadcast-inspired interface. Each channel operates as a child node—such as NOOK TV—allowing distinct identities while remaining part of a unified “music television” ecosystem."
     },
     "17": {
-      "html_badge": "Teamwear Design",
+      "html_badge": "Teamwear Design / Print Production",
       "html_h4": "NZ Tall Blacks Teamwear",
       "customIframe": "https://www.youtube.com/watch?v=kl4agACR-98&t=1880s",
       "images": [
         "images/1.jpg",
         "images/3.jpg",
-        "images/IMG_0713.jpg",
-        "images/IMG_0714.jpg",
-        "images/IMG_0721.jpg",
-        "images/IMG_0722.jpg",
-        "images/IMG_0723.jpg",
-        "images/IMG_0724.jpg"
+        "images/rams1.jpg",
+        "images/rams2.jpg",
+        "images/surv1.jpg",
+        "images/surv2.jpg",
+        "images/lege1.jpg",
+        "images/lege2.jpg"
       ],
       "html_image": "images/3.jpg",
       "title": "New Zealand Tall Blacks Teamwear",
-      "youtube": "sxdiCVc4jEc",
-      "startTime": 1668,
-      "description": "This work coincided with 2007 tests between the Tall Blacks and other Oceanic teams vying for Olympic qualification. During this time, the team introduced Tū Kaha, a haka centred on unity and collective strength, with references to native flora informing the visual direction of the kit.\n\nMy role involved designing the teamwear, incorporating a fern pattern along the side panels as a subtle expression of national identity and a reference to the National Basketball Organisation’s branding. The design balanced performance with a clean, modern aesthetic, reinforcing themes of connection and cohesion while maintaining a strong on-court presence.\n\nAddional responsibilites included prepress prepartion of the entire team roster, and design direction of off-court team kit.",
+      "youtube": "vGVrF9qskXI",
+      "startTime": 1969,
+      "description": "This work coincided with 2007 tests between the Tall Blacks and other teams vying for Olympic qualification. During this time, the team introduced Tū Kaha, a haka centred on unity and collective strength, with references to native flora informing the visual direction of the kit.\n\nMy role involved designing the teamwear, incorporating a fern pattern along the side panels as a subtle expression of national identity and a reference to the National Basketball Organisation’s branding. The design balanced performance with a clean, modern aesthetic, reinforcing themes of connection and cohesion while maintaining a strong on-court presence.\n\nAddional responsibilites included prepress prepartion of the entire team roster, and design direction of off-court team kit.",
       "chips": [
         {
           "type": "youtube",
           "id": "kl4agACR-98",
-          "title": "Tall Blacks",
+          "title": "Tall Blacks Vs Australia",
           "startTime": 1880
+        },
+        {
+          "type": "youtube",
+          "id": "sxdiCVc4jEc",
+          "title": "Tall Blacks Vs Venezula",
+          "startTime": 1668
         },
         {
           "type": "youtube",
