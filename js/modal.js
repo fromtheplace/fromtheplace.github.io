@@ -523,6 +523,31 @@ if (modalNext) {
   modalNext.style.display = currentIndex === ids.length - 1 ? 'none' : 'flex';
   modalNext.disabled = currentIndex === ids.length - 1;
 }
+
+// Share button
+const shareBtn = document.getElementById('modalShareBtn');
+if (shareBtn) {
+  // Clone to remove any previous listener
+  const fresh = shareBtn.cloneNode(true);
+  shareBtn.parentNode.replaceChild(fresh, shareBtn);
+
+  fresh.addEventListener('click', function () {
+    const shareUrl = window.location.origin + window.location.pathname + '?project=' + currentProjectId;
+    const title = (document.getElementById('modal-title') || {}).textContent || 'From the Place';
+
+    if (navigator.share) {
+      navigator.share({ title: title, url: shareUrl });
+      return;
+    }
+
+    navigator.clipboard.writeText(shareUrl).then(function () {
+      const orig = fresh.innerHTML;
+      fresh.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied';
+      fresh.classList.add('copied');
+      setTimeout(function () { fresh.innerHTML = orig; fresh.classList.remove('copied'); }, 2000);
+    });
+  });
+}
 }
 
 
