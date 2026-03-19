@@ -352,7 +352,6 @@ a.logo-mark .line-bottom {
   padding: 0.65rem 0;
   border-top: 0.5px solid var(--border);
   margin-top: var(--gap);
-  display: none;
 }
 
 /* ── INFO / CONTACT ── */
@@ -601,13 +600,27 @@ a.logo-mark .line-bottom {
 }
 #modal-body .credit-list li:last-child { border-bottom: none; }
 
-/* ── CHIPS ── */
-
-.chip-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+/* ── MODAL SHARE ── */
+.modal-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: none;
+  border: 0.5px solid var(--border-md);
+  padding: 5px 12px;
+  cursor: pointer;
+  color: var(--muted);
+  border-radius: 100px;
+  transition: color 0.15s, border-color 0.15s;
+  align-self: flex-start;
+  margin-top: 0.5rem;
 }
+.modal-share-btn:hover { color: var(--text); border-color: var(--text); }
+.modal-share-btn.copied { color: var(--text); border-color: var(--text); }
 
 /* ── CHIPS ── */
 
