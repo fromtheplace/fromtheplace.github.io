@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From the Place - Studio Portfolio</title>
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="hero-video">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/Ak7f9zN5irU?autoplay=1&mute=1&controls=0&loop=1&playlist=Ak7f9zN5irU&playsinline=1"
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo-mark" aria-label="From the Place">
+        <span class="line-top">from the</span>
+        <span class="line-bottom">place</span>
+      </a>
+      <div class="header-studio-line">
+        Creation + Capture &times; Production &mdash; visual narratives and multimedia experiences.
+      </div>
+      <nav class="nav">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#9790;</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+<!-- HERO (drop this INSIDE <main> ABOVE <section class="projects-section"> ) -->
+<section class="hero-funnel" id="top">
+  <div class="container hero-grid">
+
+    <div class="hero-left">
+      <div class="hero-kicker">CREATIVE STORIES. REAL IMPACT.</div>
+
+      <h1 class="hero-title">
+        WE BRING IDEAS<br />
+        <span class="hero-title-accent">TO LIFE.</span>
+      </h1>
+
+      <p class="hero-sub">
+        From concept to screen, we craft visual stories that connect,
+        inspire and drive real results.
+      </p>
+
+      <div class="hero-cta-row">
+        <a href="#projects" class="hero-btn hero-btn-primary">
+          VIEW OUR WORK <span class="arrow">→</span>
+        </a>
+
+        <a href="#projects" class="hero-btn hero-btn-ghost">
+          PLAY SHOWREEL <span class="play">▶</span>
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="hero-trust-label">TRUSTED BY</div>
+        <div class="hero-trust-logos">
+          <span>Fonterra</span>
+          <span>Waitati</span>
+          <span>Ōtepoti Hip Hop</span>
+          <span>Nook &amp; Cranny</span>
+          <span>Music for People</span>
+        </div>
+      </div>
+    </div>
+
+ 
+      </div>
+    </div>
+
+  </div>
+</section>
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div id="projects-grid" class="projects-grid"></div>
+        <div class="project-count" id="project-count"></div>
+      </div>
+    </section>
+
+    <section class="info-section" id="contact">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-block">
+            <div class="info-label">Location</div>
+            <div class="info-val">Otepoti / Dunedin, NZ</div>
+          </div>
+          <div class="info-block">
+            <div class="info-label">Disciplines</div>
+            <div class="info-val">Design &middot; Video &middot; Audio &middot; Print</div>
+          </div>
+          <div class="info-block">
+            <div class="info-label">Contact</div>
+            <div class="info-val"><a href="mailto:blamboxcity@gmail.com">blamboxcity@gmail.com</a></div>
+          </div>
+          <div class="info-block">
+            <div class="info-label">Services</div>
+            <div class="info-val">
+              Graphic / Poster Design &middot; Offset / Digital / Screen Print &middot;
+              Podcast Production &middot; Multicam Live Video &middot;
+              Video &amp; Motion Graphics &middot; Event Videography &middot;
+              Video Editing &amp; Post Production &middot; Live Audio Production
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; From the Place</span>
+      <span class="footer-note">Single page &middot; JSON-driven</span>
+    </div>
+  </footer>
+
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-counter">
+          <span id="modal-current-index">1</span> / <span id="modal-total-count">7</span>
+        </div>
+        <button class="modal-close-x" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-video-strip">
+        <div id="modalVideoContainer" class="embed-container"></div>
+      </div>
+      <div class="modal-body-wrap">
+        <div class="modal-media-col">
+          <div id="modalImageContainer" class="modal-images"></div>
+        </div>
+        <div class="modal-info-col">
+          <div class="modal-text-col">
+            <div class="modal-footer-nav modal-top-nav">
+              <button class="modal-prev" aria-label="Previous Project">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                Prev
+              </button>
+              <button class="modal-next" aria-label="Next Project">
+                Next
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+            <div id="modal-badge" class="modal-badge"></div>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <div id="modal-body"></div>
+            <button class="modal-share-btn" id="modalShareBtn" aria-label="Share project">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share
+            </button>
+          </div>
+          <div class="chips">
+            <div id="yt-chip-container" class="chip-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="image-lightbox-overlay" style="display:none;">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="projects-data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
