@@ -1205,6 +1205,27 @@ a.logo-mark .line-bottom {
   flex: 1;
 }
 
+
+ .bandcamp-embed {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .bandcamp-embed iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    border: 0 !important;
+    display: block;
+  }
+
+  /* Optional: stops layout bugs caused by parents */
+  .bandcamp-embed * {
+    box-sizing: border-box;
+  }
 /* bandcamp iframe */
 .iframe-chip-container {
   width: 100%;
