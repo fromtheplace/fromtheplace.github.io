@@ -1095,8 +1095,8 @@ a.logo-mark .line-bottom {
 
 .chip-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(44%, 1fr));
-  gap: 0.7rem;
+grid-template-columns: 1fr;
+    gap: 0.7rem;
 }
 
 /* media chips */
