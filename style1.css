@@ -1215,17 +1215,28 @@ grid-template-columns: 1fr;
     overflow: hidden;
 }
 .iframe-chip-wrapper iframe {
-    width: 100% !important;
+  width: 100% !important;
   border: 0 !important;
   display: block;
-
-  height: clamp(
-    199px,
-    calc(199px + (39 * ((100vw - 990px) / 158))),
-    238px
-  ) !important;
 }
 
+/* MOBILE / FULL-SPAN */
+@media (max-width: 760px) {
+  .iframe-chip-wrapper iframe {
+    height: clamp(320px, 70vw, 455px) !important;
+  }
+}
+
+/* DESKTOP / COMPACT */
+@media (min-width: 761px) {
+  .iframe-chip-wrapper iframe {
+    height: clamp(
+      199px,
+      calc(199px + (39 * ((100vw - 990px) / 158))),
+      238px
+    ) !important;
+  }
+}
 /* ─────────────────────────────────────────────
    LIGHTBOX
 ───────────────────────────────────────────── */
