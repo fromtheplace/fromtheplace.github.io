@@ -1087,7 +1087,11 @@ a.logo-mark .line-bottom {
 }
 
 /* chips */
-.chips { align-self: start; }
+.chips { align-self: start; 
+         display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;}
 
 .chip-container {
   display: grid;
@@ -1222,6 +1226,7 @@ a.logo-mark .line-bottom {
     max-width: 100% !important;
     border: 0 !important;
     display: block;
+     height: 199px !important;
 }
 
 /* ─────────────────────────────────────────────
