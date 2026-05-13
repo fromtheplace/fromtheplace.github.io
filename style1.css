@@ -1216,10 +1216,14 @@ grid-template-columns: 1fr;
 }
 .iframe-chip-wrapper iframe {
     width: 100% !important;
-    max-width: 100% !important;
-    border: 0 !important;
-    display: block;
-     height: 199px !important;
+  border: 0 !important;
+  display: block;
+
+  height: clamp(
+    199px,
+    calc(199px + (39 * ((100vw - 990px) / 158))),
+    238px
+  ) !important;
 }
 
 /* ─────────────────────────────────────────────
