@@ -4,7 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>From the Place - Studio Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style1.css" />
+  <style>
+    /* Align hero left content with projects grid */
+    .hero-funnel .container,
+    .projects-section .container,
+    .info-section .container {
+      max-width: var(--container-max, 1200px);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--container-pad, 2rem);
+      padding-right: var(--container-pad, 2rem);
+    }
+    .hero-left {
+      padding-left: 0;
+    }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -27,14 +42,39 @@
       <div class="header-studio-line">
         Creation + Capture &times; Production &mdash; visual narratives and multimedia experiences.
       </div>
-      <nav class="nav">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">&#9790;</button>
-      </nav>
+      <nav class="nav"></nav>
     </div>
   </header>
 
   <main>
+<!-- HERO (drop this INSIDE <main> ABOVE <section class="projects-section"> ) -->
+<section class="hero-funnel" id="top">
+  <div class="container hero-grid">
 
+    <div class="hero-left">
+      <div class="hero-kicker">Creating</div>
+
+      <h1 class="hero-title">Design, Audio<br>
+        <span class="hero-title-accent">&amp; Motion Graphics</span>
+      </h1>
+
+      <p class="hero-sub"></p>
+
+      <div class="hero-cta-row">
+        <a href="#projects" class="hero-btn hero-btn-primary">
+          VIEW OUR WORK <span class="arrow">→</span>
+        </a>
+      </div>
+
+
+    </div>
+
+ 
+      </div>
+    
+
+  
+</section>
     <section class="projects-section" id="projects">
       <div class="container">
         <div id="projects-grid" class="projects-grid"></div>
