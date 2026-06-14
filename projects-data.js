@@ -216,7 +216,7 @@ const projectData = {
       ]
     },
     "7": {
-      "youtube": "DPQRV7qTxT0",
+      "youtube": "XQUEs-DEJv4",
       "title": "Fonterra - Infographic Video Production",
       "description": "This project was created to commemorate 100 years of lactose production in New Zealand.\nWork included Storyboard planning, graphic creation, 2D Animation, Soundtrack composition and production.",
       "creditsHTML": "<div class=\"credit-list\">\n      <h2>Scope</h2>\n      <ul>\n        <li>Animation design & production</li>\n        <li>Music Composition</li>\n        <li>Voice over production</li>\n      </ul>\n    </div>",
