@@ -184,14 +184,14 @@ const projectData = {
       ]
     },
     "5": {
-      "youtube": "iCHbYu7owBQ",
-      "title": "Autumn Arena",
-      "description": "Description for project five. Brief summary of services and highlights.",
-      "creditsHTML": "<div class=\"credit-list\">\n      <h2>Scope</h2>\n      <ul>\n        <li>Video Production</li>\n        <li>Composition (EXPJ - Bass Guitar)</li>\n        <li>Graphic Design</li>\n        <li>Event Management (Booking Administrator)</li>\n      </ul>\n    </div>",
-      "html_badge": "Design / Video / Stage",
-      "html_image": "images/arena_cover.jpg",
-      "html_h4": "Arena Project",
-      "html_description": "Music & Performance"
+  "youtube": "iCHbYu7owBQ",
+  "title": "Autumn Arena (Music Festival)",
+  "description": "A living on location project – live music camping festival. Work included: stage planning and management, artist and workshop booking and administration, graphic design, video production, print procurement and social media campaign management.",
+  "creditsHTML": "<div class=\"credit-list\">\n      <h2>Scope</h2>\n      <ul>\n        <li>On Location Event Coordination</li>\n        <li>Social Media Campaign</li>\n        <li>Print Procurement</li>\n        <li>Stage/Artist Coordination</li>\n      </ul>\n    </div>",
+  "html_badge": "Design / Print / Community",
+  "html_image": "images/arena_cover.jpg",
+  "html_h4": "Arena Project",
+  "html_description": "Music & Performance"
     },
     "6": {
       "youtube": "ox4QqeyNykQ",
