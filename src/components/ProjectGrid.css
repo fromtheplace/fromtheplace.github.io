@@ -1,0 +1,165 @@
+.project-grid-section {
+  padding: 2rem 0 4rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-tile {
+  position: relative;
+  aspect-ratio: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #0a0a0a;
+  isolation: isolate;
+}
+
+.project-tile:focus-visible {
+  outline: 2px solid var(--project-glow, #e8e6df);
+  outline-offset: 3px;
+}
+
+.project-tile-media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.project-tile-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-tile-media-fallback {
+  position: absolute;
+  inset: 0;
+  background: var(--project-color, #1a1a1a);
+}
+
+.project-tile-play {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #fff;
+  opacity: 0.85;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+}
+
+/* Scrim: a bottom-anchored gradient using the project's own accent
+   colour so each tile carries a whisper of its section colour, echoing
+   the per-project scrim already used in ProjectSection. Present but
+   faint at rest, strengthens on hover so the info overlay stays legible. */
+.project-tile-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--project-color, #000) 85%, black) 0%,
+    transparent 55%
+  );
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project-tile:hover .project-tile-scrim,
+.project-tile:focus-visible .project-tile-scrim {
+  opacity: 0.92;
+}
+
+.project-tile-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: #fff;
+  text-align: left;
+}
+
+.project-tile-tags {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--project-glow, #e8e6df);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-height 0.25s ease;
+}
+
+.project-tile:hover .project-tile-tags,
+.project-tile:focus-visible .project-tile-tags {
+  opacity: 1;
+  max-height: 1.5rem;
+}
+
+.project-tile-title {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  font-weight: 600;
+  opacity: 0.88;
+  transform: translateY(0.15rem);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-tile:hover .project-tile-title,
+.project-tile:focus-visible .project-tile-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-tile-expand {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.project-tile:hover .project-tile-expand,
+.project-tile:focus-visible .project-tile-expand {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-tile-tags,
+  .project-tile-title,
+  .project-tile-expand,
+  .project-tile-scrim {
+    transition-duration: 0.01ms;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  /* No hover on touch — tags stay hidden (little room), but the title
+     is always at readable opacity so tiles aren't unlabeled until tap. */
+  .project-tile-title {
+    opacity: 1;
+    transform: none;
+  }
+}

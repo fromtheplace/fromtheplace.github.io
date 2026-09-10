@@ -1,0 +1,1966 @@
+:root {
+  --bg:            #0b0b0a;
+  --fg:            #f3f1ea;
+  --fg-dim:        rgba(243,241,234,0.60);
+  --fg-faint:      rgba(243,241,234,0.32);
+  --line:          rgba(243,241,234,0.12);
+  --accent:        #c9a876;
+  --scrim-top:     rgba(4,4,4,0.72);
+  --scrim-mid:     rgba(4,4,4,0.22);
+  --scrim-bottom:  rgba(4,4,4,0.88);
+  --nav-height:    80px;
+  
+  /* type */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'Syne', 'Courier New', monospace;
+  --font-mono-weight: 900;
+--font-h1: 'Syne', var(--font-display);
+  --font-h2: 'Syne', var(--font-display);
+  --font-h3:       var(--font-mono);
+  --font-h4:       var(--font-mono);
+  --ease:          cubic-bezier(0.22,1,0.36,1);
+  --dur-fast:      400ms;
+  --dur-med:       550ms;
+  --dur-slow:      700ms;
+  /* landing and footer section shades */
+  --landing-bg:    #0d0e1f; /* midnight-blue range */
+  --grid-bg:       #111a1a; /* dark-slate-gray range */
+}
+
+ 
+/* ============================================================
+   ambient background video stage
+   ============================================================ */
+.bg-video-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--bg);
+  overflow: hidden;
+  transform: translateZ(0);
+}
+ 
+.bg-layer-wrap {
+  position: absolute;
+  inset: 0;
+  will-change: opacity;
+  transform: translateZ(0);
+}
+ 
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+ 
+.bg-video-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    var(--scrim-top) 0%,
+    var(--scrim-mid) 40%,
+    var(--scrim-bottom) 100%
+  );
+}
+ 
+/* Fade overlay */
+.bg-video-scrim::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;      /* start state */
+  opacity: 1;             /* fully visible at first */
+  pointer-events: none;
+  animation: scrimFadeOut 25s ease forwards;
+  animation-delay: 5s;   /* wait 10 seconds before fading */
+}
+ 
+@keyframes scrimFadeOut {
+  to { opacity: 0; }      /* end state = your gradient */
+}
+ 
+ 
+/* ============================================================
+   nav
+   ============================================================ */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: 0 2rem;
+  border-bottom: 0.5px solid var(--line);
+  background: rgba(10,9,8,0.58);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+ 
+.site-nav-inner {
+  max-width: 88rem;
+  margin: 0 auto;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+ 
+/* stacked "from the / place" mark, straight from the original header */
+.logo-mark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.22);
+ border-radius: 1.1rem;
+  padding: 1rem 0.9rem 0.9rem;
+  line-height: 0.9;
+  text-align: center;
+  transition: border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease),
+              background var(--dur-fast) var(--ease);
+  flex-shrink: 0;
+  text-decoration: none;
+  background: rgba(0,0,0,0.22);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  font-family:  'Inter', -apple-system, sans-serif;
+}
+ 
+.logo-mark:hover {
+  border-color: rgba(255,255,255,0.38);
+  transform: translateY(-1px);
+  background: rgba(0,0,0,0.32);
+}
+ 
+.logo-mark .line-top {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--fg);
+  opacity: 0.92;
+}
+ 
+.logo-mark .line-bottom {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--fg);
+  text-transform: uppercase;
+  line-height: 1.25;
+}
+ 
+.site-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+ 
+.site-nav-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ 
+.site-nav-dot {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0.4rem 0.15rem;
+  display: flex;
+  align-items: center;
+}
+ 
+.site-nav-dot-all {
+  margin-left: 0.35rem;
+  padding-left: 0.6rem;
+  border-left: 0.5px solid var(--line);
+}
+ 
+.site-nav-dot-all .site-nav-dot-number {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+ 
+.site-nav-dot-number {
+font-family: 'Syne', var(--font-display);
+  font-size: 2rem;
+  font-weight:1000;
+  letter-spacing: 0.03em;
+  color: var(--fg-faint);
+  transition: color var(--dur-fast) var(--ease);
+  display: block;
+}
+ 
+.site-nav-dot-active .site-nav-dot-number {
+  color: var(--fg-dim);
+}
+ 
+.site-nav-dot:hover .site-nav-dot-number,
+.site-nav-dot:focus-visible .site-nav-dot-number {
+  color: var(--accent);
+}
+ 
+.site-nav-dot-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.5rem;
+  color: var(--fg-dim);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease);
+  margin-top: 0.3rem;
+}
+ 
+.site-nav-dot:hover .site-nav-dot-label,
+.site-nav-dot:focus-visible .site-nav-dot-label { opacity: 1; }
+ 
+.site-nav-sound {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--fg-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  transition: border-color var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease);
+}
+ 
+.site-nav-sound:hover,
+.site-nav-sound[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+ 
+/* ============================================================
+   scroll snap
+   ============================================================
+   No CSS scroll-snap here. Section advancement (one wheel/swipe/arrow
+   gesture = move exactly one section) is handled entirely in JS by
+   useLenis.js. Two earlier approaches — JS idle-detect snapping, and
+   native CSS scroll-snap alongside continuous Lenis wheel smoothing —
+   each caused their own class of bug (a feedback loop, and multi-scroll
+   jitter, respectively) from two systems fighting over scroll position.
+   See useLenis.js for the full explanation. */
+ 
+/* ============================================================
+   intro section
+   ============================================================ */
+.intro-section {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 5rem 3rem;
+  max-width: 94rem;
+  margin: auto;
+}
+ 
+.intro-content {
+  max-width: 40rem;
+  width: 100%;
+  align-self:center;
+}
+ 
+.intro-eyebrow {
+  color: var(--accent);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display:none;
+}
+ 
+.intro-headline {
+  font-family: var(--font-h1);
+  font-size: clamp(1.6rem,5vw,3.4rem);
+  line-height: 1.02;
+  margin-bottom: 1.25rem;
+  font-weight: 900;
+}
+ 
+.intro-tagline {
+  font-size: .85rem;
+  color: var(--fg-dim);
+  max-width: 34rem;
+  margin-bottom: 2.25rem;
+}
+ 
+.intro-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(11rem,1fr));
+  gap: 1.25rem;
+  margin: 0 0 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  display:none;
+}
+ 
+.intro-facts dt {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  margin-bottom: 0.35rem;
+}
+ 
+.intro-facts dd {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--fg-dim);
+  line-height: 1.5;
+}
+ 
+.intro-cta {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--fg);
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: border-color var(--dur-fast) var(--ease),
+              background var(--dur-fast) var(--ease);
+}
+ 
+.intro-cta:hover {
+  border-color: var(--accent);
+  background: rgba(201,168,118,0.08);
+}
+ 
+/* ============================================================
+   project sections
+   ============================================================ */
+main { position: relative; z-index: 2; }
+ 
+.project-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 3rem;
+}
+ 
+.project-color-scrim {
+  position: absolute;
+  inset: 0;
+  background: var(--project-color, #0f1a1a);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+ 
+.project-section > *:not(.project-color-scrim) { position: relative; z-index: 1; }
+ 
+.project-reel {
+  position: absolute;
+  top: 1.75rem;
+  right: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--fg-faint);
+  z-index: 1;
+}
+ 
+/* ── content grid ───────────────────────────────────────── */
+.project-content {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(22rem,45rem);
+  grid-template-areas: 'text shorts';
+  gap: 3.5rem;
+  align-items: start;
+  max-width: 88rem;
+  margin: 3.5rem auto;
+  width: 100%;
+}
+.project-section[id="16"] > .project-content {
+  display: grid;
+  
+ grid-template-columns: unset!important;
+ 
+ }
+ 
+ 
+.project-text-block {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+ 
+.project-title-block { align-self: start; }
+.project-body-block  { max-width: 40rem; }
+ 
+.project-shorts-wrap {
+  grid-area: shorts;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.25rem;
+}
+ 
+.project-meta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+ 
+.project-title {
+  font-family: var(--font-h2);
+   font-size: clamp(1.6rem,3vw,2.6rem);
+  line-height: 1.05;
+  margin-bottom: 0;
+font-weight: 600;
+}
+ 
+.project-description {
+  color: var(--fg-dim);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 40rem;
+}
+ 
+.project-credits {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  color: var(--fg-dim);
+  font-size: 0.8rem;
+}
+ 
+.project-credits h3 {
+  font-family: var(--font-h3);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fg-faint);
+  margin-bottom: 0.6rem;
+}
+ 
+.project-credits ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+ 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+ 
+.project-links .chip-pill {
+  width: auto;
+}
+ 
+.project-link-embed,
+.project-embed {
+  margin-top: 1.5rem;
+  width: 60rem!important;
+   color-scheme: dark!important; /* Signals dark mode preference down into the iframe */
+
+}
+
+
+
+
+  .project-link-embed iframe {
+	  aspect-ratio:1;
+  zoom:0.5;
+
+}
+ 
+.project-link-embed iframe,
+.project-embed iframe { max-width: 100%;   border-radius:16px;   margin-top:3px;}
+ 
+/* ── gallery ────────────────────────────────────────────── */
+ 
+.project-gallery {
+  width: 100%;
+  max-width: 40rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.project-gallery::-webkit-scrollbar { height: 4px; }
+.project-gallery::-webkit-scrollbar-track { background: transparent; }
+.project-gallery::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+ 
+.gallery-thumb.uniform-thumb {
+  width: 4.5rem;
+  height: 4.5rem;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+ 
+ 
+.uniform-thumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: #111;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.92;
+  transition: opacity var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+ 
+.uniform-thumb:hover,
+.uniform-thumb:focus-visible {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+ 
+.uniform-thumb:active {
+  transform: scale(0.98);
+}
+ 
+.uniform-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+ 
+.uniform-thumb:hover img { transform: scale(1.04); }
+ 
+.chip-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+ 
+.modal-chip-image.uniform-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+ 
+/* ============================================================
+   tablet frame + incidental strip
+   ============================================================ */
+.project-shorts {
+width: 100%;
+  max-width: 45rem;
+}
+ 
+.tablet-frame-wrap {
+  position: relative;
+}
+ 
+.tablet-frame-wrap:has(.tablet-frame--phone) {
+  max-width: 16rem;
+  margin: 0 auto;
+}
+ 
+.tablet-glow {
+  position: absolute;
+  inset: -10px;
+  z-index: -1;
+  background: radial-gradient(circle, color-mix(in srgb, var(--project-glow, #7c5cff) 45%, transparent), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  transform: scale(1.3);
+}
+ 
+.tablet-frame {
+  width: 100%;
+  aspect-ratio: 3/2;
+  background: #0e0e0d;
+  border-radius: 22px;
+  padding: 0.9rem;
+  box-shadow:
+    0 24px 70px rgba(0,0,0,0.55),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+  transform-origin: center center;
+  transition: aspect-ratio 0.4s var(--ease), max-width 0.4s var(--ease),
+              border-radius 0.4s var(--ease);
+}
+ 
+/* Plays once whenever the frame actually flips shape (tablet <-> phone
+   — see the isPortrait effect in MainVideoEmbed, ProjectShorts.jsx),
+   layered on top of the width/aspect-ratio/border-radius transition
+   above rather than replacing it. A literal 90deg spin was tempting
+   ("rotate to a phone") but looks chaotic here: the box's own
+   dimensions are simultaneously morphing between two very different
+   ratios (3/2 vs 9/16), and rotating a shape that's also changing
+   shape mid-rotation reads as broken, not intentional. A small tilt +
+   dip instead draws the eye while the underlying shape settles, then
+   resolves back to upright right as the new aspect ratio finishes —
+   a suggestion of a flip rather than the box literally spinning
+   through it. */
+@keyframes tablet-frame-flip {
+  0%   { transform: rotate(0deg) scale(1); }
+  45%  { transform: rotate(7deg) scale(0.94); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+ 
+.tablet-frame--flipping {
+  animation: tablet-frame-flip 0.5s var(--ease);
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .tablet-frame--flipping {
+    animation: none;
+  }
+}
+ 
+.tablet-frame--phone {
+  aspect-ratio: 9/16;
+  width: auto;
+  max-width: 16rem;
+  margin: 0 auto;
+    border: 20px;
+	padding: 0.5rem;
+	scale: 1.3;
+  
+}
+ 
+ 
+#all-videos .tablet-frame {
+  aspect-ratio: 5/3;
+}
+ 
+ 
+#all-videos .tablet-frame--phone {
+  aspect-ratio: 9/16;
+  
+  
+}
+ 
+.tablet-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+ 
+.tablet-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+ 
+.tablet-embed iframe {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  inset: 0;
+}
+ 
+ 
+.incidental-row {
+  margin-top: 0.85rem;
+}
+.incidental-row .design-grid-row {
+  --grid-item-h: 4.5rem;
+  gap: 0.5rem;
+}
+ 
+ 
+.design-grid-groups > div:first-child h3.chip-row-heading {
+  border-top: 0px solid var(--line);
+  padding-top: 0.9rem;
+  margin: 0.5rem 0 1rem;
+}
+ 
+ 
+.design-grid-groups > div:not(:first-child) h3.chip-row-heading {
+  border-top: none;
+  padding-top: 0rem;
+  margin: 0.5rem 0 1rem;
+}
+ 
+ 
+.chip-row-heading {
+  font-family: var(--font-h3);
+  font-weight: 400;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-faint);
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+  margin: 1.5rem 0 1.1rem 0.25rem;
+  
+}
+ 
+.project-media-row {
+  align-self: stretch;
+  width: 100%;
+  max-width: 45rem;
+}
+ 
+.project-media-row .design-grid-row {
+  --grid-item-h: 4.5rem;
+  gap: 0.5rem;
+}
+ 
+/* ============================================================
+   AllVideosSection — every site video, tablet right, chip grid
+   spans the full left column height (not sharing space with a
+   title/body block the way .project-text-block does)
+   ============================================================ */
+.video-library-content {
+	scale: 1.0;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(20rem,48rem);
+  grid-template-areas: 'list tablet';
+  gap: 3.5rem;
+  align-items: stretch;
+  max-width: 88rem;
+  min-height: min(60vh, 38rem);
+  margin: 3.5rem auto;
+  width: 100%;
+    padding-top: 6rem;
+	
+}
+ 
+.video-library-list {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  margin-top: -6rem;
+}
+ 
+.video-library-list .project-title {
+	
+	font-family: var(--font-h1);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--fg);
+
+	margin-bottom: 0.25rem; }
+ 
+.video-library-groups-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 1.5rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+  
+
+}
+.video-library-groups-scroll::-webkit-scrollbar { width: 4px; }
+.video-library-groups-scroll::-webkit-scrollbar-track { background: transparent; }
+.video-library-groups-scroll::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+ 
+ 
+.video-library-groups-scroll .design-grid-groups {
+  gap: 1.5rem;
+  
+}
+.video-library-groups-scroll .design-grid-row {
+  --grid-item-h: 12rem;
+  gap: 0.5rem;
+}
+ 
+.video-thumb-item {
+  border-radius: 0.35rem;
+  overflow: hidden;
+}
+ 
+.video-thumb-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14);
+  pointer-events: none;
+}
+ 
+.video-thumb-icon {
+  position: absolute;
+  left: 0.4rem;
+  bottom: 0.4rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.video-thumb-icon svg {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+ 
+.video-thumb-item.is-selected::after {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+ 
+.video-library-tablet-wrap {
+  grid-area: tablet;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+ 
+.video-library-tablet-wrap .tablet-frame-wrap {
+  width: 100%;
+}
+ 
+/* Only rendered when the featured video's watchAllVideos.js entry has
+   a projectId — opens the same ProjectModal a ProjectGrid tile click
+   would (see onOpenProject, AllVideosSection.jsx). Text-link styling
+   rather than a button/chip shape, consistent with how understated
+   the rest of this section's chrome is (no borders/pills anywhere
+   else in the tablet area). */
+.video-library-project-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--fg-dim);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease);
+}
+ 
+.video-library-project-link:hover,
+.video-library-project-link:focus-visible {
+  color: var(--accent);
+}
+ 
+@media (max-width: 900px) {
+  .video-library-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'tablet' 'list';
+    min-height: 0;
+    gap: 2rem;
+  }
+  .video-library-grid {
+    max-height: 18rem;
+  }
+}
+ 
+/* ============================================================
+   project grid (bottom / footer section)
+   ============================================================ */
+.project-grid-section {
+  position: relative;
+  z-index: 2;
+  background: var(--grid-bg);
+  padding: 4rem 3rem 3rem;
+}
+ 
+.project-grid-section-inner {
+  max-width: 88rem;
+  margin: 0 auto;
+}
+ 
+.project-grid-heading {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-faint);
+  margin-bottom: 1.5rem;
+}
+ 
+.project-grid {
+  display: grid;
+grid-template-columns: repeat(auto-fill, minmax(16rem,1fr));
+  gap: 1rem;
+  max-width: 88rem;
+  margin:auto;
+}
+ 
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  color: var(--fg);
+  transition: border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+ 
+.project-tile:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+ 
+/* :hover never fires on touch, so give tiles their own pressed state */
+.project-tile:active {
+  border-color: var(--accent);
+  transform: scale(0.98);
+}
+ 
+.project-tile-image-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #111;
+  overflow: hidden;
+}
+ 
+.project-tile-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+ 
+.project-tile:hover .project-tile-image-wrap img { transform: scale(1.04); }
+ 
+.project-tile-badge {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0.8rem 0.85rem 0;
+}
+ 
+.project-tile-title {
+  font-family: var(--font-h4);
+  font-size: 1rem;
+  margin: 0.35rem 0.85rem 0;
+}
+ 
+.project-tile-summary {
+  font-size: 0.78rem;
+  color: var(--fg-dim);
+  margin: 0.35rem 0.85rem 0.85rem;
+  line-height: 1.4;
+}
+ 
+/* ============================================================
+   project modal — ported from the original From the Place modal
+   ============================================================ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: rgba(0,0,0,0.82);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2vh 1.25rem;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+ 
+.modal-content {
+  background: rgba(15,14,12,0.96);
+  width: 100%;
+  max-width: 66rem;
+  border: 0.5px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 120px rgba(0,0,0,0.75);
+}
+ 
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.95rem 1.35rem;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.35);
+}
+ 
+.modal-counter {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+ 
+.modal-close-x {
+  background: rgba(0,0,0,0.30);
+  border: 0.5px solid rgba(255,255,255,0.18);
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--fg-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+  border-radius: 999px;
+}
+ 
+.modal-close-x:hover {
+  color: var(--fg);
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+ 
+/* full-width video strip */
+.modal-video-strip {
+  width: 100%;
+  background: #000;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+}
+ 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+ 
+.modal-body-wrap {
+  display: block;
+}
+ 
+.modal-info-col {
+  padding: 1.8rem 1.6rem 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 1.4rem;
+  align-items: stretch;
+}
+ 
+.modal-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 0;
+}
+ 
+.modal-badge {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 0.5px solid rgba(201,168,118,0.4);
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  align-self: flex-start;
+}
+ 
+.modal-title {
+  font-family: var(--font-h2);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+ 
+.modal-description,
+.modal-credits {
+  font-size: 12px;
+  color: var(--fg-dim);
+  line-height: 1.8;
+}
+ 
+.modal-credits {
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--line);
+}
+ 
+.modal-credits h3 {
+  font-family: var(--font-h3);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+ 
+.modal-credits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+ 
+.modal-credits li {
+  font-size: 11px;
+  color: var(--fg-dim);
+  padding: 5px 0;
+  border-bottom: 0.5px solid var(--line);
+}
+ 
+.modal-credits li:last-child { border-bottom: none; }
+ 
+.modal-embed { margin: 1rem 0; }
+.modal-embed iframe { max-width: 100%; }
+ 
+.modal-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.25);
+  border: 0.5px solid rgba(255,255,255,0.14);
+  padding: 6px 14px;
+  cursor: pointer;
+  color: var(--fg-dim);
+  border-radius: 999px;
+  transition: color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+  align-self: flex-start;
+  margin-top: 0.55rem;
+}
+ 
+.modal-share-btn:hover {
+  color: var(--fg);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+ 
+.modal-share-btn.copied {
+  color: var(--fg);
+  border-color: var(--accent);
+}
+ 
+.modal-footer-nav {
+  display: flex;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--line);
+  margin-top: 0.5rem;
+}
+ 
+.modal-top-nav {
+  padding-top: 0;
+  border-top: none;
+  margin-top: 0;
+  padding-bottom: 0.9rem;
+  border-bottom: 0.5px solid var(--line);
+  margin-bottom: 0.25rem;
+}
+ 
+.modal-footer-nav button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.25);
+  border: 0.5px solid rgba(255,255,255,0.14);
+  padding: 7px 14px;
+  cursor: pointer;
+  color: var(--fg-dim);
+  border-radius: 999px;
+  transition: color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+ 
+.modal-footer-nav button:hover {
+  color: var(--fg);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+ 
+/* chip column — sized and spaced to match the tablet's incidental strip */
+.chips {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+ 
+.chip-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+ 
+.chip-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-decoration: none;
+  color: var(--fg);
+  border: 0.5px solid var(--line);
+  border-radius: 999px;
+  background: rgba(0,0,0,0.2);
+  padding: 0.4rem 0.9rem;
+  opacity: 0.82;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease),
+              opacity var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+ 
+.chip-pill:hover,
+.chip-pill:focus-visible {
+  border-color: var(--accent);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+ 
+.modal-chip-active,
+.chip-pill-active {
+  opacity: 1;
+  border-color: var(--accent);
+}
+ 
+.chip-pill-thumb {
+  flex: 0 0 auto;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+ 
+.chip-pill-label {
+ 
+  font-family: var(--font-h3);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  
+  letter-spacing: 0.03em;
+  color: var(--fg-dim);
+  line-height: 1.3;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ 
+.chip-pill-platform {
+  flex: 0 0 auto;
+  width: 0.9rem;
+  height: 0.9rem;
+  color: var(--fg-faint);
+  transition: color var(--dur-fast) var(--ease);
+}
+ 
+.chip-pill:hover .chip-pill-platform,
+.chip-pill:focus-visible .chip-pill-platform,
+.chip-pill-active .chip-pill-platform {
+  color: var(--accent);
+}
+ 
+.chip-pill-media .chip-pill-platform {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+ 
+/* youtube + image-link chips carry a thumbnail, so they get the pill
+   sized 50% larger across the board (thumb, padding, label) */
+.chip-pill-media {
+  gap: 0.75rem;
+  padding: 0.6rem 1.35rem;
+}
+ 
+.chip-pill-media .chip-pill-thumb {
+  width: 2.55rem;
+  height: 2.55rem;
+}
+ 
+.chip-pill-media .chip-pill-label {
+  font-size: 0.93rem;
+}
+ 
+.iframe-chip-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+ 
+.iframe-chip-title {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  margin-bottom: 0.4rem;
+}
+ 
+.iframe-chip-wrapper iframe {
+  width: 100% !important;
+  border: 0 !important;
+  display: block;
+  border-radius: 10px;
+}
+ 
+/* image lightbox, opened from the gallery column */
+.modal-image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+ 
+.modal-image-lightbox img {
+  max-width: 92vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+ 
+.modal-image-lightbox-close {
+  position: fixed;
+  top: calc(var(--nav-height) + 1rem);
+  right: 1.5rem;
+  font-size: 30px;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.modal-image-lightbox-close:hover { color: var(--accent); }
+ 
+.modal-image-lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.30);
+  border: 0.5px solid rgba(255,255,255,0.18);
+  color: var(--fg-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease),
+              transform var(--dur-fast) var(--ease);
+}
+ 
+.modal-image-lightbox-nav:hover {
+  color: var(--fg);
+  border-color: var(--accent);
+}
+ 
+.modal-image-lightbox-prev { left: 1.2rem; }
+.modal-image-lightbox-prev:hover { transform: translateY(-50%) translateX(-2px); }
+.modal-image-lightbox-next { right: 1.2rem; }
+.modal-image-lightbox-next:hover { transform: translateY(-50%) translateX(2px); }
+ 
+.modal-image-lightbox-counter {
+  position: fixed;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+ 
+ 
+/* ============================================================
+   site footer
+   ============================================================ */
+.site-footer {
+  position: relative;
+  z-index: 2;
+  background: var(--grid-bg);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.75rem 2rem 2.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--fg-faint);
+  border-top: 1px solid var(--line);
+}
+ 
+.empty-state {
+  padding: 3rem;
+  color: var(--fg-dim);
+}
+ 
+/* ============================================================
+   lightbox
+   ============================================================
+*/
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(4, 4, 4, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+ 
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--fg);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+ 
+.lightbox-body {
+  max-width: 64rem;
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+ 
+.lightbox-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+ 
+.lightbox-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+ 
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+ 
+.lightbox-caption {
+  color: var(--fg-dim);
+  font-size: 0.8rem;
+  text-align: center;
+}
+/* ============================================================
+   responsive
+   ============================================================ */
+@media (max-width: 980px) {
+  :root { --nav-height: 68px; }
+}
+@media (max-width: 860px) {
+ 
+  .intro-section {
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+  }
+ 
+  .intro-content { text-align: left; }
+ 
+  .project-description {
+    font-size: 0.8rem;
+  }
+  
+}
+ 
+@media (max-width: 760px) {
+			.project-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'title'
+      'shorts'
+      'body';
+    gap: 1.5rem;
+  }
+ 
+ 
+  .project-text-block { display: contents; }
+  .project-title-block { grid-area: title; align-self: auto; }
+  .project-body-block { grid-area: body; }
+ 
+  .project-shorts-wrap { align-items: start; }
+ 
+  .project-shorts {
+    max-width: 100%;
+    margin: 0;
+  }
+ 
+ 
+  .project-gallery {
+    max-width: 26rem;
+    justify-content: center;
+  }
+ 
+  .site-nav-dots { display: none; }
+ 
+  .modal-backdrop {
+    padding: 0;
+    align-items: flex-start;
+  }
+ 
+  .modal-content {
+    border-radius: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+ 
+  .modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: max(0.7rem, env(safe-area-inset-top)) 1rem 0.7rem;
+  }
+ 
+  /* 44px minimum tap target, per mobile a11y guidance — was 34px */
+  .modal-close-x {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+ 
+  .modal-video-strip { position: relative; }
+ 
+  .modal-info-col {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    padding: 1.4rem 1.1rem 2.2rem;
+    gap: 0;
+  }
+ 
+  .modal-title { font-size: 22px; }
+ 
+  .modal-text-col { width: 100%; }
+ 
+  /* stack nav buttons full-width for easier thumb reach */
+  .modal-top-nav {
+    gap: 0.5rem;
+  }
+  .modal-top-nav button,
+  .modal-footer-nav button {
+    flex: 1;
+    justify-content: center;
+    padding: 0.65rem 0.9rem;
+  }
+ 
+  .chips {
+    width: 100%;
+    margin-top: 1.2rem;
+  }
+ 
+  .chip-container { gap: 0.6rem; }
+ 
+  /* bigger, easier-to-tap chip rows on touch */
+  .chip-pill { padding: 0.55rem 1rem; }
+  .chip-pill-media { padding: 0.7rem 1.1rem; }
+  .chip-pill-thumb { width: 2rem; height: 2rem; }
+  .chip-pill-media .chip-pill-thumb { width: 2.8rem; height: 2.8rem; }
+  .chip-pill-label { font-size: 0.78rem; white-space: normal; }
+  .chip-pill-media .chip-pill-label { font-size: 0.95rem; }
+ 
+  .modal-share-btn {
+    padding: 0.6rem 1.1rem;
+  }
+ 
+  .modal-image-lightbox-close {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  }
+ 
+@media (max-width: 480px) {
+  .project-shorts   { max-width: 100%; }
+  .project-content { grid-template-columns: 1fr; grid-template-areas: 'title' 'shorts' 'body'; gap: 1.5rem; }
+ 
+  .project-grid-section { padding: 3rem 1.1rem 2rem; }
+  .project-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+  .project-tile-title { font-size: 0.88rem; }
+  .project-tile-summary { font-size: 0.72rem; }
+}
+ 
+ 
+ 
+.design-grid-content {
+  display: grid;
+/*  grid-template-columns: minmax(4rem, 5rem) 2fr;
+   was a single `gap: 3.5rem` shorthand — split so the horizontal gap
+     between the heading and the first row can stay wider than the
+     vertical rhythm between the (now full-width) rows stacked below
+     it; a single shared gap value would have forced those to match. */
+  column-gap: 3.5rem;
+  row-gap: 2.75rem;
+  align-items: start;
+  max-width: 88rem;
+  margin: 7rem auto 0;
+  width: 100%;
+}
+ 
+.design-grid-sidebar {
+  grid-column: 1;
+}
+ 
+/* First row only — sits beside the heading in the grid's first row,
+   same position it's always had. */
+.design-grid-row-group--paired {
+  grid-column: 2;
+}
+ 
+/* Every row after the first — spans the full section width rather
+   than staying inset in column 2. The heading's column (1) only has
+   real content for the first row's height; grid auto-placement drops
+   each of these into its own new row below that point since column 2
+   is already spoken for in row 1. */
+.design-grid-row-group--full {
+  grid-column: 1 / -1;
+}
+ 
+.design-grid-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-faint);
+  margin-bottom: 1.6rem;
+}
+ 
+.design-grid-headings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+ 
+.design-grid-headings span {
+  font-family: var(--font-h1);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--fg);
+}
+ 
+.design-grid-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  min-width: 0;
+}
+ 
+.design-grid-group-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-faint);
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.1rem;
+}
+ 
+ 
+.design-grid-row-wrap {
+  position: relative;
+}
+ 
+.design-grid-row {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+  --grid-item-h: 30rem;
+  padding: 0.5rem 0;
+  margin: -0.5rem 0;
+}
+ 
+.design-grid-row::-webkit-scrollbar {
+  display: none;
+}
+ 
+.design-grid-row:active {
+  cursor: grabbing;
+}
+ 
+.design-grid-row.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+  scroll-snap-type: none;
+}
+ 
+/* Same fix as .is-dragging, for wheel-scrolling instead of pointer
+   drag — see the wheel handler in CoverflowRow.jsx for why snap needs
+   to be suppressed for the gesture's duration rather than left on.
+   No cursor/user-select change here on purpose: wheel-scrolling isn't
+   a click-drag, so the grabbing hand cursor would be a lie. */
+.design-grid-row.is-wheeling {
+  scroll-snap-type: none;
+}
+ 
+.design-grid-row--compact {
+  --grid-item-h: 14rem;
+}
+ 
+/* minimal edge nav — full row height, right-fade so it reads as an
+   affordance rather than a button chrome. Hides itself (see
+   canScrollRight in DesignRow) once the row has nothing left to reveal. */
+.design-grid-row-nav {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  bottom: 0;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  background: linear-gradient(to right, transparent, var(--bg) 78%);
+  color: var(--fg-dim);
+  cursor: pointer;
+  z-index: 2;
+  transition: color var(--dur-fast) var(--ease);
+  
+}
+.design-grid-row-nav svg{
+       
+        width: 50px;
+    height: 50px;}
+ 
+.design-grid-row-nav--prev {
+  left: 0;
+  right: auto;
+  background: linear-gradient(to left, transparent, var(--bg) 78%);
+}
+ 
+.design-grid-row-nav:hover,
+.design-grid-row-nav:focus-visible {
+  color: var(--accent);
+}
+ 
+.design-grid-row-nav:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+}
+ 
+.design-grid-item {
+  position: relative;
+  flex: 0 0 auto;
+  height: var(--grid-item-h, 29em);
+  /* No max-width — width is always height × the item's own aspect-
+     ratio (set inline per item), so the box's shape always exactly
+     matches the image's real shape, whatever that is. A cap here was
+     the only thing that could ever force a mismatch and make
+     object-fit clip something below. Since this row scrolls
+     horizontally, an unusually wide item just takes proportionally
+     more scroll distance to pass — not a layout problem the way it
+     would be in a fixed-width grid. */
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.92;
+  isolation: isolate;
+  scroll-snap-align: center;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity;
+  transition: opacity var(--dur-fast) var(--ease),
+              transform 0.2s var(--ease);
+
+}
+ 
+.design-grid-item::before {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  z-index: -1;
+  background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%);
+  filter: blur(70px);
+  pointer-events: none;
+  transform: scale(0.9);
+}
+ 
+.design-grid-item:hover,
+.design-grid-item:focus-visible {
+  opacity: 1;
+}
+ 
+.design-grid-item:focus-visible {
+  outline: 2px solid var(--accent, #fff);
+  outline-offset: 4px;
+}
+ 
+.design-grid-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* contain rather than cover: with the box's aspect-ratio already
+     matching the image exactly, these render identically in the
+     normal case — there's no mismatch for either mode to resolve. The
+     difference only shows up if an item's declared `ratio` is ever
+     slightly off from its actual file (typo, rough estimate, a re-
+     exported asset with different crop) — cover would silently crop
+     to hide that mismatch, contain shows a thin letterbox instead.
+     Since the whole point here is a guarantee of "never cropped," this
+     is the safer default even though it costs nothing in the common
+     correct-ratio case. */
+  object-fit: contain;
+ 
+  background: rgba(255,255,255,0.04);
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .design-grid-item {
+    transition: opacity var(--dur-fast) var(--ease);
+  }
+}
+ 
+ 
+@media (max-width: 1136px) {
+  
+  .design-grid-row {
+    --grid-item-h: 18.5rem;
+}
+ 
+.design-grid-row--compact {
+  --grid-item-h: 12rem;
+}
+  .video-library-content {
+	scale: 0.9;
+  
+}
+@media (max-width: 1024px) {
+  .design-grid-content {
+    grid-template-columns:1fr;
+    gap: 2.25rem;
+  }
+  .design-grid-row {
+    --grid-item-h: 17rem;
+}
+ 
+.design-grid-row--compact {
+  --grid-item-h: 11rem;
+}
+  
+  
+}
+@media (max-width: 960px) {
+ 
+  .design-grid-row {
+    --grid-item-h: 12rem;
+  }
+  .design-grid-row--compact {
+    --grid-item-h: 8rem;
+  }
+}
+@media (max-width: 760px) {
+  .design-grid-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  /* Only one column exists at this width — without this, --paired's
+     grid-column: 2 would request a column that no longer exists,
+     creating a phantom implicit track instead of just stacking. */
+  .design-grid-row-group--paired,
+  .design-grid-row-group--full {
+    grid-column: 1;
+  }
+  .design-grid-row {
+    --grid-item-h: 15rem;
+  }
+  .design-grid-row--compact {
+    --grid-item-h: 10rem;
+  }
+  .design-grid-item {
+    max-width: 100%;
+  }
+ 
+  .design-grid-item::before {
+    inset: -6px;
+    filter: blur(20px);
+    transform: scale(0.9);
+  }
+  .design-grid-row-nav {
+    width: 2.25rem;
+  }
+}

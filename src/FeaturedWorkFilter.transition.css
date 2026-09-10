@@ -1,0 +1,20 @@
+.featured-work-grid-wrap {
+  animation: featured-work-fade-in 0.45s ease both;
+}
+
+@keyframes featured-work-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-work-grid-wrap {
+    animation: none;
+  }
+}

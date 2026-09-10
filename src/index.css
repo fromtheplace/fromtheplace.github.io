@@ -1,0 +1,107 @@
+:root {
+  /* colour */
+  --bg: #0b0b0a;
+  --fg: #f3f1ea;
+  --fg-dim: rgba(243, 241, 234, 0.6);
+  --fg-faint: rgba(243, 241, 234, 0.32);
+  --line: rgba(243, 241, 234, 0.14);
+  --accent: #c9a876;
+  --scrim-top: rgba(6, 6, 5, 0.55);
+  --scrim-bottom: rgba(6, 6, 5, 0.85);
+
+  /* type */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  /* motion */
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 400ms;
+  --dur-med: 550ms;
+  --dur-slow: 700ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  overscroll-behavior: none;
+}
+
+/* The whole layout (rem sizing, gaps, tablet frame, section heights)
+   was designed and eyeballed at 85% browser zoom. Since everything in
+   this stylesheet is built on rem units relative to the root font size,
+   scaling the root font size down to 85% reproduces that exact look at
+   normal 100% zoom, rather than relying on the visitor's browser zoom
+   level. This is also what fixes incidental chips not displaying on
+   projects with more than 2: shrinking everything by the same 85%
+   factor that zoom would have applied means the extra wrapped rows of
+   chips fit inside the same 100vh section instead of being pushed
+   below the fold. */
+html {
+font-size: 75% !important;
+}
+
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0b0b0a;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

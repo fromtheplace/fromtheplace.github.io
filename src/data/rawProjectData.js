@@ -1,0 +1,357 @@
+export const rawProjectData = {
+  projects: {
+    1: {
+      title: 'Ōtepoti Hip Hop Hustle 24',
+      youtube: 'JQFnCWUfXk0',
+      playlist: 'PL2HwIIvWJIPHkofbvzfQy7apKM2vYth5k',
+      chips: [
+		{
+		  type: 'youtube',
+		  title: "Afterfilm '24",
+		  id: 'AyBXBHIu_Vc',
+		},
+		{
+		  type: 'youtube',
+		  title: "Afterfilm '22",
+		  id: 'KqEROpsGV_g',
+		},
+        {
+          type: 'url',
+          url: 'https://www.odt.co.nz/news/dunedin/connecting-through-music',
+          title: 'Press Article #1',
+          localImage: 'images/ohhodt2.jpg',
+        },
+        {
+          type: 'url',
+          url: 'https://www.odt.co.nz/news/arts-festival-dunedin/night-%E2%80%98boogieing%E2%80%99-hip-hop-event-hit',
+          title: 'Press Article #2',
+          localImage: 'images/ohhodt.jpg',
+        },
+        {
+          type: 'youtube',
+          id: 'PTzNHJmz63Q',
+          title: 'Reel #1',
+        },
+      ],
+      description:
+        'Ōtepoti Hip-Hop Hustle has grown from humble beginnings as a part of the Dunedin Fringe Festival, featuring over 100 artists from throughout NZ.   <br/><br/>Since the 2022 event <strong><em>From the Place</em></strong> has created and hosted the event performances and afterfilms.',
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>Multicam live video production</li>\n        <li>Live on-stage camera projection</li>\n        <li>After-Film Production</li>\n        <li>Long-Form & Short-Form Video Publishing</li>\n      </ul>\n    </div>',
+      html_badge: 'Video / Production',
+      html_image: 'images/OHHH+2024+JLP.jpg',
+      html_h4: 'Ōtepoti Hip Hop Hustle',
+      html_description: 'Music Festival videography and live production.',
+    },
+    2: {
+      youtube: 'Ct2avwGJqjA',
+      startTime: 0,
+      title: 'Music for People',
+      chips: [
+        { type: 'youtube', id: '-ZsnEJllT5Y', title: 'Ryechi - MFP1' },
+        { type: 'youtube', id: 'y4jkCeM_hDo', title: 'Rezzy Crooks - MFP1' },
+        { type: 'youtube', id: 'XvE0GewwNlI', title: 'MFP2 - St Pauls Cathedral stream', startTime: 18806 },
+        { type: 'youtube', id: 'HWOwgh6AI5k', title: 'MFP2 - Starters Bar stream', startTime: 6899 },
+        {
+          type: 'url',
+          url: 'https://www.odt.co.nz/entertainment/music/powerful-brew-something-new',
+          title: 'ODT Article #1',
+          localImage: 'images/mfpodt1.jpg',
+        },
+        {
+          type: 'url',
+          url: 'https://www.critic.co.nz/news/article/9500/the-spat-behind-music-for-the-peoples-relocation-f',
+          title: 'Critic/Te Ārohi Article',
+          localImage: 'images/mfpcritic.jpg',
+        },
+        {
+          type: 'url',
+          url: 'https://www.odt.co.nz/entertainment/music/people-get-ready',
+          title: 'ODT Article #2',
+          localImage: 'images/mfpodt2.jpg',
+        },
+      ],
+      images: ['images/mfp1_2.jpg', 'images/MFP234.jpg', 'images/mfp0.jpg'],
+      description:
+        "In February 2020, just before lockdowns, New New New hosted its largest and most ambitious line-up to date. Music for People featured 11 genre-spanning acts, from rap to rock and everything in between. The follow-up expanded to 32 acts across two distinct sessions: an afternoon in St Paul's Cathedral and an evening at Starters Bar. <br/><br/>  <strong><em>From the Place</em></strong>  led both the creative and technical direction, developing a cohesive visual identity and a multi-platform production workflow. This included multicam live video streaming for both sessions, real-time on-site camera projection, and live audio mastering for high-fidelity broadcast and archival delivery. All graphic assets, across print, digital, and motion, were designed in-house, along with a custom ecommerce and ticketing platform featuring artist profiles, schedules, and sales integration. The result was a seamless, hybrid production that bridged audiences across spaces and styles, delivering a unified experience in both physical and digital form.",
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>Multicam Live Video Production</li>\n        <li>Live Audio Mastering</li>\n        <li>Graphic Design</li>\n        <li>Ecommerce/Ticketing website</li>\n        <li>Music Composition/Teaser Video Production</li>\n      </ul>\n    </div>',
+      html_badge: 'Design / Video / Stream',
+      html_image: 'images/mfp0.jpg',
+      html_h4: 'Music for People',
+      html_description:
+        'Multi-day crowd-sourced music event with coordination across multiple venues and digital platforms.',
+    },
+    3: {
+      title: 'Nook & Cranny Music Fest',
+      youtube: 'WImSgUXMGC0',
+      description:
+        'In-person events weren\u2019t possible during lockdown. The Nook & Cranny Music Festival was reimagined, fully online. The normally library-based festival evolved from our collaborative response that brought local artists together in a single, curated broadcast.\n<br/><br/>\n<strong><em>From the Place</em></strong> supported the festival end-to-end, coordinating promotion and administration while delivering a polished livestream with live-mastered audio and custom on-screen graphics. The result was a cohesive, high-quality broadcast that preserved the festival\u2019s presence during lockdown and offered audiences a shared live music experience at a time when it mattered most.',
+      chips: [
+        { type: 'youtube', id: 'ZjQX8IGXmkk', title: 'Library stream Pt.1', startTime: 3344, thumbnail: 'images/NC211.jpg' },
+        { type: 'youtube', id: 'bs1pQGatwVw', title: 'Library stream Pt.2', startTime: 9178, thumbnail: 'images/NC212.jpg' },
+        { type: 'twitch', title: 'Lockdown Stream Pt.1', videoId: '616649181', thumbnail: 'images/NCtwitch1.jpg', timestamp: '8h53m35s' },
+        { type: 'twitch', title: 'Lockdown Stream Pt.2', videoId: '616649388', thumbnail: 'images/NCtwitch2.jpg' },
+        {
+          type: 'url',
+          url: 'https://www.odt.co.nz/news/dunedin/nook-and-cranny-act-%E2%80%98so-different%E2%80%99',
+          title: 'Press Article',
+          localImage: 'images/ncodt.jpg',
+        },
+      ],
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>        \n<li>Campaign design</li>        \n<li>Multicam Live Video Production</li>\n        <li>Animation & Video production</li>\n      </ul>\n    </div>',
+      images: ['images/nook_poster.jpg', 'images/ncmtv.jpg', 'images/Nook_banner.jpg', 'images/livestats.jpg'],
+      html_badge: 'Design / Video / Stream',
+      html_image: 'images/178799204_3729780010482660_6832248583617810706_n.jpg',
+      html_h4: 'Nook & Cranny Music Fest',
+      html_description: 'Livestreamed Music festival in a library',
+    },
+    4: {
+      title: 'Waitati Music Festival',
+      youtube: 'yxH2mg92doY',
+      startTime: 4,
+      chips: [
+        { type: 'youtube', id: '3OS_XOca06o', title: 'Undertow set', thumbnail: 'images/undertow5.jpg' },
+        { type: 'youtube', id: 'f8fhAe6YrTw', title: 'Ferdishenko set', thumbnail: 'images/ferdishenko.jpg' },
+        {
+          type: 'url',
+          url: 'https://www.odt.co.nz/the-star/music-festival-organisers-taking-cautious-approach',
+          title: 'WMF Press',
+          localImage: 'images/wmfodt.jpg',
+        },
+        { type: 'twitch', title: 'Livestream', videoId: '596164984', thumbnail: 'images/wmfl1.jpg', timestamp: '7h28m51s' },
+      ],
+      description:
+        "Initial Poster/campaign design work lead to collaborating to create an impromptu online music fest.\n<br/><br/>\nDuring the pandemic, livestreaming grew popular. Waitati Music Festival was the first local event streamed, aggregating all the artists performances into a single stream. <strong><em>From the Place</em></strong> managed all \nfacets of promotion and admin, through to producing live mastered audio and on screen display within a seamless broadcast, saving the event's continuity and providing a production that stood out through the lockdown achieving over 16k views organically on a platform with less than 1000 followers at the time.",
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>Campaign Design</li>\n        <li>Livestream production</li>\n\t <li>On Screen graphics</li>\n      </ul>\n    </div>',
+      html_badge: 'Design / Video / Stream',
+      html_image: 'images/wmfl.jpg',
+      html_h4: 'Waitati Music Festival',
+      html_description: 'Brand & campaign design, Livestream production',
+      images: ['images/livestats.jpg', 'images/wmf20.jpg'],
+    },
+    5: {
+      youtube: 'iCHbYu7owBQ',
+      title: 'Autumn Arena (Music Festival)',
+      description:
+        'A living on location project, live music camping festival. Work included: stage planning and management, artist and workshop booking and administration, graphic design, video production, print procurement and social media campaign management.',
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>On Location Event Coordination</li>\n        <li>Social Media Campaign</li>\n        <li>Print Procurement</li>\n        <li>Stage/Artist Coordination</li>\n      </ul>\n    </div>',
+      html_badge: 'Design / Print / Community',
+      html_image: 'images/arena_cover.jpg',
+      html_h4: 'Arena Project',
+      html_description: 'Music & Performance',
+    },
+    6: {
+      youtube: 'ox4QqeyNykQ',
+      title: 'Ollie Crooks - Take you There (LP)',
+      description:
+        '"Take You There" captures Ollie Crooks in a period of creative exploration that moves between introspective folk and groove-driven indie soul.<br/><br/>Aside from cover and campaign design, <strong><em>From the Place</em></strong> tracked, produced and mastered the work, and created a music video for a single \'$3 a Litre\', filmed in Burkes Pass, New Zealand.',
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>Cover & campaign design</li>\n        <li>Album production </li>\n        <li>Video production </li>\n      </ul>\n    </div>',
+      html_badge: 'Recording / Design / Video',
+      html_image: 'images/OllieCrooks_cover2.png',
+      html_h4: 'Ollie Crooks - Take You There (LP)',
+      html_description: 'Album recording and video production',
+      chips: [
+        {
+          type: 'iframe',
+          title: '',
+          iframe:
+            '<iframe style="border: 0; width: auto; height: auto;" src="https://bandcamp.com/EmbeddedPlayer/album=439202460/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=1224234983/transparent=true/" seamless><a href="https://olliecrooks.bandcamp.com/album/take-you-there">Take you there by Ollie Crooks</a></iframe>',
+        },
+        { type: 'youtube', id: 'wVFA4gm0K8Q', title: 'Lobofest Set', startTime: 840},
+      ],
+    },
+    7: {
+      youtube: 'XQUEs-DEJv4',
+      title: 'Fonterra - Infographic Video Production',
+      description:
+        'This project was created to commemorate 100 years of lactose production in New Zealand.\nWork included Storyboard planning, graphic creation, 2D Animation, Soundtrack composition and production.',
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>Animation design & production</li>\n        <li>Music Composition</li>\n        <li>Voice over production</li>\n      </ul>\n    </div>',
+      html_badge: 'Video / Audio / Design',
+      html_image: 'images/fonterra.jpg',
+      html_h4: 'Fonterra - Infographic Video',
+      html_description: 'Infographic production',
+    },
+    8: {
+      youtube: 'Rc7OHXJtWco',
+      title: 'from the place - Youtube Channel',
+      description: 'Documentation and cataloging performance art.',
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>Sound Design</li>\n        <li>Color Correction</li>\n      </ul>\n    </div>',
+      html_image: 'images/ftpyt1_w.jpg',
+      html_h4: 'from the place - Youtube Channel',
+      html_description: 'Sample description for project eight.',
+      html_badge: 'Video / Audio',
+      images: ['images/ftpyt1_w.jpg'],
+    },
+    9: {
+      html_image: 'https://via.placeholder.com/300x200',
+      html_h4: 'Print and screen design',
+      html_description: 'Print and screen design examples.',
+      html_badge: 'Screen / Print',
+      title: 'Print and screen design',
+    },
+    10: {
+      html_image: 'https://via.placeholder.com/300x200',
+      html_h4: 'Newsyland',
+      html_description: 'Sample description for project ten.',
+      creditsHTML: '<div class="credit-list">\n      <h3>Scope</h3>',
+    },
+    11: {
+      html_image: 'images/spaceconcert.jpg',
+      html_h4: 'Space Concert',
+      html_description: 'Sample description for project eleven.',
+      creditsHTML: '<div class="credit-list">\n      <h3>Scope</h3>',
+    },
+    12: {
+      html_image: 'images/tk2.jpg',
+      html_h4: 'Te Rūnanga o Ngāi Tahu - TK Magazine',
+      html_description: 'Magazine layout and advertising design.',
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>      <ul>\n        <li>Layout & advertising design</li>\n      </ul>\n    </div>',
+      title: 'Te Karaka Magazine',
+      html_badge: 'Print Design',
+      youtube: '_D0lrNo1vNo',
+      images: ['images/tkcovers.jpg', 'images/TKspread1.jpg', 'images/TKspread2.jpg'],
+      description:
+        'Te Karaka is the flagship Ng\u0101i Tahu quarterly publication covering the best of current M\u0101ori, indigenous and New Zealand culture. <br/><br/>Design work involved layout contributions in issues #36 - 54. This included a regular recurring spread \u201cAhakoa he iti, he pounamu\u201d, a well-known M\u0101ori saying meaning \u201cAlthough it is small, it is a treasure\u201d.',
+    },
+    13: {
+      html_badge: 'Design / Video / Stage',
+      html_image: 'images/jsfcover.jpg',
+      html_h4: 'JAH SUN: FEST',
+      title: 'JAH SUN: FEST',
+      youtube: 'iYsvXeUsH0E',
+    },
+    14: {
+      html_h4: 'LOBOFEST',
+      title: 'LOBOFEST',
+      chips: [
+        {
+          type: 'url',
+          url: 'https://www.odt.co.nz/entertainment/music/winter-fest-winner',
+          title: 'localImage:images/lobo.jpg',
+        },
+      ],
+    },
+    15: {
+      html_badge: 'Contact',
+      title: 'Reach out!',
+      youtube: 'KqEROpsGV_g',
+      html_description: '<a href="mailto:blamboxcity@gmail.com">blamboxcity@gmail.com</a>.',
+      startTime: 0,
+      html_h4: 'Reach out!',
+      html_image: 'images/ro.jpg',
+      description: 'Reach out via <a href="mailto:blamboxcity@gmail.com">blamboxcity@gmail.com</a>.',
+    },
+    16: {
+      html_badge: 'UX UI development',
+      html_image: 'images/ftplays.jpg',
+      html_h4: 'FTPtv',
+      html_description:
+        'Web-hosted "TV/streaming" style music or video channel index, streaming local content, related to music and perfomance.',
+      title: 'FTPtv',
+      customIframe:
+        '<iframe style="border:1px #FFFFFF none" src="https://ftplays.vercel.app/?theme=dark" theme="dark" title="iFrame" width="800px" height="512px" scrolling="no" frameborder="no" allow="autoplay; fullscreen"></iframe>',
+      description:
+        'FTP TV is a web-hosted, TV-style index for music and performance video content. It functions as a lightweight streaming hub, presenting locally focused channels under a single broadcast-inspired interface. Each channel operates as a child node, such as NOOK TV, allowing distinct identities while remaining part of a unified "music television" ecosystem. From the Plays is a chart style web media browser, serving as a bespoke bridge to curated youtube content, using JSON schema and a cloud DB.',
+      chips: [
+        { type: 'url', title: 'From the Plays', url: 'https://ftplays.vercel.app' },
+        { type: 'url', title: 'FTPtv1', url: 'https://ftplays.vercel.app/channel.html' },
+		{ type: 'url', title: 'FTPtv hub', url: 'https://ftplays.vercel.app/portal.html' },
+      ],
+    },
+    17: {
+      html_badge: 'Teamwear Design / Print Production',
+      html_h4: 'NZ Tall Blacks Teamwear',
+      customIframe: 'https://www.youtube.com/watch?v=kl4agACR-98&t=1880s',
+      images: ['images/1.jpg', 'images/3.jpg'],
+      html_image: 'images/3.jpg',
+      title: 'New Zealand Tall Blacks Teamwear',
+      youtube: 'vGVrF9qskXI',
+      startTime: 1969,
+      description:
+        'This work coincided with 2007 tests between the Tall Blacks and other teams vying for Olympic qualification. During this time, the team introduced T\u016b Kaha, a haka centred on unity and collective strength, with references to native flora informing the visual direction of the kit.\n\nThe scope of work involved designing the teamwear in accordance with FIBA international guidlines, incorporating a fern pattern along the side panels as a subtle expression of national identity and a reference to the National Basketball Organisation\u2019s branding. The design balanced performance with a clean, modern aesthetic, reinforcing themes of connection and cohesion while maintaining a strong on-court presence.\n\nAdditional responsibilites included prepress prepartion of the entire team roster, and design direction of off-court team kit.',
+      chips: [
+        { type: 'youtube', id: 'kl4agACR-98', title: 'Tall Blacks Vs Australia', startTime: 1880 },
+        { type: 'youtube', id: 'sxdiCVc4jEc', title: 'Tall Blacks Vs Venezula', startTime: 1668 },
+        { type: 'youtube', id: 'fPGyetrWbh8', title: 'Gameface Classic', startTime: 212 },
+      ],
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>Multistakeholder design direction</li>\n        <li>Screenprint and Dye Sublimation prepress production</li>        \n      </ul>\n    </div>',
+    },
+    100: {
+      title: 'Spectacle! #48 - Live video production',
+      html_h4: 'Spectacle! #48',
+      html_description: 'Short description',
+      html_badge: 'Live Video Production',
+      html_image: 'images/spec49.jpg',
+      description:
+        "A dynamic, immersive, participatory show spanning conceptual art, dance, digital art, installation, music, and visual art.  Each collaborators reinterpreted the theme of Spectacle within their chosen artform, presented over two nights to a curated audience free from the constraints of a traditional gallery setting.\nBoth nights were livestreamed globally, extending the happening far beyond the venue's walls.\nSpectacle was nominated for Best Dance, Best Technical, and Most Original Content at the Dunedin Fringe Festival.",
+      youtube: 'XWZlt4dHaks',
+      chips: [
+        { type: 'url', title: 'Night #2 Stream', url: 'https://youtu.be/ULVCxgdYZ10?t=2082', localImage: 'images/spec49.jpg' },
+        { type: 'url', title: 'Press #1', url: 'https://www.dunedindreambrokerage.nz/projects/spectacle' },
+        { type: 'url', title: 'Press #2', url: 'https://www.odt.co.nz/entertainment/fringe/only-spectacle-guaranteed' },
+      ],
+      images: [],
+      creditsHTML: '<div class="credit-list"><h3>Scope</h3><ul><li>Service</li></ul></div>',
+    },
+    18: {
+      title: 'Print & Editorial Design',
+      description:
+        'A selection of cover, typography, and layout design work spanning recurring magazine features, musical theatre branding, and annual report design.',
+      creditsHTML:
+        '<div class="credit-list">\n      <h3>Scope</h3>\n      <ul>\n        <li>Cover design</li>\n        <li>Typography</li>\n        <li>Layout design</li>\n      </ul>\n    </div>',
+      html_badge: 'Print Design',
+      html_image: 'images/full/custody_with_culture.jpg',
+      html_h4: 'Print & Editorial Design',
+      html_description: 'Covers, typography, and layout design',
+      images: [
+ 'images/full/take_you_thee.png',
+    'images/full/newnewnew.png',
+    'images/full/vapourium.png',
+    'images/full/undertow.png',
+    'images/full/ocho.png',
+        'images/full/custody_with_culture.jpg',
+        'images/full/ahakoa_he_iti.jpg',
+        'images/full/jesus_christ_superstar.jpg',
+        'images/full/cats.jpg',
+        'images/full/miss_saigon.jpg',
+        'images/full/the_producers.jpg',
+        'images/full/cast_musical_numbers.jpg',
+        'images/full/annual_plan_cover.jpg',
+        'images/full/lake_mountain_cover.jpg',
+        'images/full/funding_impact.jpg',
+        'images/full/they_continue_in_faith.jpg',
+		'images/full/mfp1.png',
+    'images/full/expj_5.png',
+    'images/full/us_not_them.png',
+    'images/full/kode9.png',
+    'images/full/te_karaka.png',
+    'images/full/robots_in_love.png',
+    'images/full/fresh_produce.png',
+    'images/full/loefah.png',
+    'images/full/orc_plan.png',
+        ],
+    },
+	
+	
+	
+  },
+
+  project_order: [ '18', '16'],
+
+  // bottom_project_order drives the bottom tile grid + modal sequence,
+  // kept separate from project_order above (which drives the cinematic
+  // scroll) so each section can be reordered independently. This is an
+  // explicit whitelist: only ids listed here appear in the bottom grid,
+  // nothing else is auto-appended.
+  bottom_project_order: [
+    '100', '1', '3', '4', '7', '6', '2', '12', '17', '18','16'
+  ],
+}
